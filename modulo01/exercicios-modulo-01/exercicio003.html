@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 003</title>
+</head>
+<body>
+    <h1>Exercício 003 - Antes e depois</h1>
+    <span><input type="number" id="num" placeholder="Digite um número"></span>
+    <button onclick="calcularnumero()">Calculo</button>
+    <div id="resultado"></div>
+    <script>
+        function calcularnumero(){
+            let txtn = document.getElementById('num');
+            let n = Number(txtn.value);
+            if(txtn.value.length == 0){
+                alert('Digite um valor');
+                return;
+            }
+
+            let ant = n - 1;
+            let suc = n + 1;
+            let res = document.getElementById('resultado');
+            res.innerHTML = `O Antecessor de ${n} é o valor ${ant}<br>`;
+            res.innerHTML += `O Sucessor de ${n} é o valor ${suc}`;
+        }
+    </script>
+</body>
+</html>

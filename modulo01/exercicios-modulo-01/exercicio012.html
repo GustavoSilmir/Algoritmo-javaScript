@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício012</title>
+</head>
+<body>
+    <h1>Exercício 012</h1>
+    <span>Digite seu Nome completo <input type="text" id="nome"></span>
+    <button onclick="apenasPrimeiroNome()">Verificar</button>
+    <div id="resultado"></div>
+    <script>
+        function apenasPrimeiroNome(){
+            let nomeCompleto = document.getElementById("nome").value.trim();
+
+            let partes = nomeCompleto.split(' ');
+            let primeiroNome = partes[0];
+            let sobreNome = partes[partes.length - 1]
+            let restoNome = partes.slice(1).join(' ')
+
+            let res = document.getElementById("resultado")
+            res.innerHTML = `Seu Primeiro nome é ${primeiroNome} <br>`
+            res.innerHTML += `Seu Sobrenome é ${sobreNome} <br>`
+            res.innerHTML += `O resto do seu nome é ${restoNome}`
+        }
+    </script>
+</body>
+</html>

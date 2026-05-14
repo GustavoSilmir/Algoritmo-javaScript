@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 008</title>
+</head>
+<body>
+    <h1>Exercício 008</h1>
+    <span>Qual é o preço do produto? <input type="number" id="valor"></span>
+    <button onclick="aplicarDesconto()">Aplicar Desconto</button>
+    <div id="resultado"></div>
+    <script>
+        function aplicarDesconto() {
+            let txtn1 =  document.getElementById("valor");
+            let valor = Number(txtn1.value);
+            let desconto = valor - (valor * 0.05)
+            let res = document.getElementById("resultado")
+            res.innerHTML = `O desconto do valor ${valor} será de 10% totalizando ${desconto.toFixed(2)}`
+
+        }
+    </script>
+</body>
+</html>

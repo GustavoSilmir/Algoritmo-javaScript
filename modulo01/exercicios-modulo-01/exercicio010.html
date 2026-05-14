@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 010</title>
+</head>
+<body>
+    <h1>Exercício 010</h1>
+    <h2>A cada cigarro fumado você perde 10 minutos de vida.</h2>
+    <span>Há quantos anos você fuma? <input type="number" id="anosfumando"></span><br><br>
+    <span>Quanto cigarros você fuma por dia? <input type="number" id="fumadospordia"></span><br><br>
+    <button onclick="calcularCigarros()">Calculo da morte</button>
+    <div id="resultado"></div>
+    <script>
+        function calcularCigarros(){
+           let txtn1 = document.getElementById("anosfumando")
+           let txtn2 = document.getElementById("fumadospordia")
+           let anosfum = Number(txtn1.value);
+           let fumadia = Number(txtn2.value);
+           let quantofumou = fumadia * (anosfum * 365);
+           let totalFumado = fumadia * (10 * 365);
+           let totaldiasperdido =   anosfum * (totalFumado / 1440);
+           let res = document.getElementById("resultado")
+           res.innerHTML = `Você em ${anosfum} já fumou ${quantofumou} cigarros. <br>`
+           res.innerHTML += `Em média você perdeu ${totaldiasperdido.toFixed(0)} dias devido ao cigarro`
+        }
+    </script>
+</body>
+</html>

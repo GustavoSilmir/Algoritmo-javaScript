@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 006</title>
+</head>
+<body>
+    <h1>Exercício 006</h1>
+    <span><input type="number" id="valor"  placeholder="Digite o valor para conversão"></span>
+    <button onclick="conversorValor()">Converter</button>
+    <div id="resultado"></div>
+    <script>
+        function conversorValor(){
+            let txtn1 = document.getElementById("valor")
+            let n = Number(txtn1.value)
+            if(txtn1.value.length == 0){
+                alert("Digite um valor")
+            }
+
+            let res = document.getElementById("resultado")
+            res.innerHTML = `Valor em KM ${n/1000}<br>`
+            res.innerHTML += `Valor em Hm ${n/100}<br>`
+            res.innerHTML += `Valor em Dam ${n/10}<br>`
+            res.innerHTML += `Valor em dm ${n*10}<br>`
+            res.innerHTML += `Valor em cm ${n*100}<br>`
+            res.innerHTML += `Valor em mm ${n*1000}<br>`
+
+        }
+    </script>
+</body>
+</html>

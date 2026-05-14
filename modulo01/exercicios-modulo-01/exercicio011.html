@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 011</title>
+</head>
+<body>
+    <h1>Exercicio 011</h1>
+    <span>Qual Cidade você mora?  <input type="text" id="city"></span>
+    <button onclick="cidade()">Resultado</button>
+    <div id="resultado"></div>
+    <script>
+        function cidade() {
+            let txtn1 = document.getElementById("city")
+             let city = txtn1.value
+             let cidadeSemEspaco = city.replace(/[-\s]/g, "")
+            let res = document.getElementById("resultado")
+            res.innerHTML = `Você mora em ${city.toUpperCase()} <br>`
+            res.innerHTML += `A primeira letra da cidade é ${city.substring(0,1)}<br>`
+            res.innerHTML += `A cidade ${city} tem ${cidadeSemEspaco.length} letras`
+        }
+    </script>
+</body>
+</html>

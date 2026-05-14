@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 009</title>
+</head>
+<body>
+    <h1>Aumento Salarial</h1>
+    <span>Nome do Funcionário <input type="text" id="nome"></span>
+    <span>Salário: <input type="number" id="salario"></span>
+    <span>Reajuste (%): <input type="number" id="reajuste"></span>
+    <button onclick="calculoSalario()">Calcular Salário</button>
+    <div id="resultado"></div>
+    <script>
+        function calculoSalario(){
+
+            let txtn1 = document.getElementById("nome")
+            let txtn2 = document.getElementById("salario")
+            let txtn3 = document.getElementById("reajuste")
+            let nome = String(txtn1.value)
+            let salario = Number(txtn2.value)
+            let reajuste = Number(txtn3.value)
+            let calc = salario * (reajuste * 0.01)
+            let valorFinal = salario + calc
+            let res = document.getElementById("resultado")
+            res.innerHTML = `${nome.toUpperCase()} ganhava ${salario.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} <br>`
+            res.innerHTML += `e depois de ganhar ${reajuste}% de aumento <br>`
+            res.innerHTML += `vai passar a ganhar ${valorFinal.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`
+        }
+    </script>
+</body>
+</html>
