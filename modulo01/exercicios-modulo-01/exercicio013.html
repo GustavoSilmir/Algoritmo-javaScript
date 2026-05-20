@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 013</title>
+</head>
+<body>
+    <h1>Exercício 013</h1>
+    <span>Primeira Nota <input type="number" id="primeiraNota"></span><br><br>
+    <span>Segunda Nota <input type="number" id="segundaNota"></span><br><br>
+    <button onclick="calculoNota()">Calculo da média</button><br>
+    <div id="resultado"></div>
+    <script>
+        function calculoNota(){
+            
+           let txtn1 = document.getElementById("primeiraNota")
+           let txtn2 = document.getElementById("segundaNota")
+            if(txtn1.value.length == " " || txtn2.value.length == " "){
+                alert("Preencha todos os campos")
+                console.log(error)
+            }
+           let nota1 = Number(txtn1.value)
+           let nota2 = Number(txtn2.value)
+           let media = (nota1 + nota2)/2
+             
+           let res = document.getElementById("resultado")
+           res.innerHTML = ""
+           if(media>= 7){
+            res.innerHTML = `Parabéns.`
+           }
+            
+           res.innerHTML += ` A média do aluno é de ${media.toFixed(1)}\n`
+           
+           
+           txtn1.value = ""
+           txtn2.value = ""
+        }
+        
+    </script>
+
+</body>
+</html>

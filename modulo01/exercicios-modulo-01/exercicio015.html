@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio015</title>
+</head>
+<body>
+    <h1>Exercício 015</h1>
+    <h2>Nós estamos no ano de </h2><h2 id="ano"></h2>
+    <h3>Bem vindo ao Banco Silmir</h3>
+    <span>Digite o ano que você nasceu <input type="number" id="nascimento"></span>
+    <button onclick="calcularIdade()">Verificar Idade</button>
+    <div id="resultado"></div>
+    <script>
+        function calcularIdade(){
+            
+            let txtn1 = document.getElementById("nascimento")
+            if(txtn1.value.length == ""){
+                alert("Digite um valor")
+                return;
+            }
+            let data = Number(txtn1.value)
+            let res = document.getElementById("resultado")
+            let anoAtual = new Date().getFullYear();
+            let preferencia = anoAtual - data
+            res.innerHTML = ''
+            res.innerHTML += `Olá você tem ${preferencia} anos, bem vindo ao nosso banco. <br>`
+            if(preferencia >= 60){
+                res.innerHTML += `Você tem ${preferencia} anos. Favor ir para o atendimento preferencial`
+            }
+
+            document.getElementById("ano").innerHTML = anoAtual
+        }
+    </script>
+</body>
+</html>
