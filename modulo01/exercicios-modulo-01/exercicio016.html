@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 016</title>
+</head>
+<body>
+    <h1>Serviço Militar v1</h1>
+    <span>Digite seu ano de nascimento:<input type="number" id="ano"></span><button onclick="verificarIdade()">Verificar Idade</button>
+    <div id="resultado"></div>
+    <script>
+        function verificarIdade(){
+            let txtn1 = document.getElementById("ano")
+            if(txtn1.value.length == "" || txtn1.value == 0){
+                alert("Digite um valor no campo")
+                return;
+            }
+            let anoNascimento = Number(txtn1.value)
+            let anoAtual = new Date().getFullYear()
+            let calculo = anoAtual - anoNascimento
+             let res = document.getElementById("resultado")
+            res.innerHTML = ''
+            if(calculo > 18){
+                res.innerHTML += `Olá você tem ${calculo} e tem mais de 18 anos e  já deveria ter se alistado no exército.`
+            }else{
+                res.innerHTML += `Olá Você ainda não tem 18 anos, você tem ainda ${calculo} anos não precisa se alistar. `
+            }
+           
+           
+            
+        }
+    </script>
+</body>
+</html>

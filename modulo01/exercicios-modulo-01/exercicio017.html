@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 017</title>
+</head>
+<body>
+    <h1>Exercício 017</h1>
+    <span>Digite um ano Qualquer <input type="number" id="ano"></span><button onclick="verificarAno()">Verificar o ano</button>
+    <div id="resultado"></div>
+    <script>
+        function verificarAno(){
+            let txtn1 = document.getElementById("ano")
+            let ano = Number(txtn1.value)
+            let res = document.getElementById("resultado")
+            if(ano % 4 == 0 && ano % 100 != 0 || ano % 400 == 0){
+                res.innerHTML = `O ano ${ano} é BISSEXTO`
+            }else{
+                res.innerHTML = `O ano ${ano} não é Bissexto`
+            }
+        }
+    </script>
+</body>
+</html>
+
+
