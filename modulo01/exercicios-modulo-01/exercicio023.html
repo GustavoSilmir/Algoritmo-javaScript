@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 23</title>
+</head>
+<body>
+    <h1>Exercício 23</h1>
+    <h2>Serviço Militar v.2</h2>
+    <span>Digite o ano que você nasceu <input type="number" id="valor"></span><br><br>
+    <button onclick="calcularIdade()">Calcular Idade</button>
+    <div id="resultado"></div>
+    <script>
+        function calcularIdade(){
+           let txtn1 = document.getElementById("valor")
+           let idade = Number(txtn1.value)
+           let anoAtual = new Date().getFullYear()
+           let anoAlistamento = anoAtual - idade
+           let res = document.getElementById("resultado")
+           if(anoAlistamento > 18){
+                res.innerHTML = `Você já tem ${anoAlistamento} anos espero que tenha se alistado`
+           }else if(anoAlistamento < 18){
+                res.innerHTML = `Você ainda não tem 18 anos, tem apenas ${anoAlistamento} anos não se preocupe em se alistar este ano.`
+           }else{
+              res.innerHTML = `Você tem ${anoAlistamento} anos, se aliste este ano.`
+           }
+
+        }
+    </script>
+</body>
+</html>

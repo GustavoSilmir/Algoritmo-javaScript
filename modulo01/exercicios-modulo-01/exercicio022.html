@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 022</title>
+</head>
+<body>
+    <h1>Exercício 22</h1>
+    <h2>Ordenando valores</h2>
+    <span>Digite o primeiro valor <input type="number" id="valor1"></span><br><br>
+    <span>Digite o Segunda valor <input type="number" id="valor2"></span><br><br>
+    <button onclick="ordenacaoValores()">Ordenador valores</button>
+    <div id="resultado"></div>
+    <script>
+        function ordenacaoValores(){
+            let txtn1 = document.getElementById("valor1")
+            let txtn2 = document.getElementById("valor2")
+            let valor1 = Number(txtn1.value)
+            let valor2 = Number(txtn2.value)
+            let res = document.getElementById("resultado")
+            if(valor1 > valor2){
+                res.innerHTML = `A ordem dos valores é ${valor2} e ${valor1}`
+            }else if(valor2 > valor1){
+                res.innerHTML = `A ordem dos valores é ${valor1} e ${valor2}`
+            }else{
+                res.innerHTML = `Não tem como ordenar valores, porque são iguais.`
+            }
+        }
+    </script>
+</body>
+</html>
