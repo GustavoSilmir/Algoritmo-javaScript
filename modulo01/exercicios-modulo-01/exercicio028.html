@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="estilo/style.css">
+    <title>Exercício 28</title>
+</head>
+<body>
+     <div class="divcompleta">
+        <div class="tabuada">
+            <h1>Descobrindo seu Peso</h1>
+            <h2>1°   Carnaval +10%</h2>
+            <h2>2°  Férias Escolares +20%</h2>
+            <h2>3°  Dia das Crianças +5%</h2>
+            <h2>4°  Black Friday -30%</h2>
+            <h2>5°  Natal -5%</h2>
+            
+        </div>
+        <div class="resultado">
+            
+            
+            <h2>Escolha sua opção abaixo</h2>
+            <span>Qual valor do item?R$:<input type="number" id="preco">
+            </span><br><br>
+            <span>Digite qual opção de preço você quer analisar<input type="number" id="opcao"></span><button onclick="calcularPreco()">Calcular</button><br><br>
+        </div>
+        <div id="resultado"></div>
+    </div>
+    <script>
+        function calcularPreco(){
+            let opcao = Number(document.getElementById("opcao").value)
+            let preco = Number(document.getElementById("preco").value)
+            let res = document.getElementById("resultado")
+            switch(opcao){
+                case 1:
+                let carnaval = preco + (preco * 0.10)
+                res.innerHTML = `O produto ficaria com o valor de ${carnaval.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`
+                break;
+                case 2:
+                let escola = preco + (preco * 0.20)
+                 res.innerHTML = `O produto ficaria com o valor de ${escola.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`
+                break;
+                case 3:
+                let crianca = preco + (preco * 0.05)
+                res.innerHTML = `O produto ficaria com o valor de ${crianca.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`
+                break;
+                case 4:
+                let black = preco - (preco * 0.30)
+                res.innerHTML = `O produto ficaria com o valor de ${black.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`
+                break;
+                case 5:
+                let natal = preco - (preco * 0.05)
+                res.innerHTML = `O produto ficaria com o valor de ${natal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`
+                break;
+                default:
+                alert("Opção digitada Inválida")
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

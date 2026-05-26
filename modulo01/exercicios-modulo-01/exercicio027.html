@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/style.css">
+    <title>exercício 27</title>
+</head>
+<body>
+     <div class="divcompleta">
+        <div class="tabuada">
+            <h1>Descobrindo seu Peso</h1>
+            <h2>1°   Mercúrio</h2>
+            <h2>2°  Vênus</h2>
+            <h2>3°  Marte</h2>
+            <h2>4°  Júpiter</h2>
+            <h2>5°  Saturno</h2>
+            <h2>6°  Urano</h2>
+        </div>
+        <div class="resultado">
+            <h2>Digite seu peso na terra</h2>
+            <span>Digite o seu peso na terra em KG <input type="number" id="n1"></span><br><br>
+            
+            <h2>Escolha sua opção abaixo</h2>
+            <span>Digite o planeta que você deseja descobrir seu peso <input type="text" id="peso"></span><button onclick="calcularPeso()">Calcular</button><br><br>
+        </div>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function calcularPeso(){
+            let valor = Number(document.getElementById("n1").value)
+            let n2 = document.getElementById("peso") 
+            let res = document.getElementById("resultado")
+            let peso = n2.value.toLowerCase().trim();
+            switch(peso){
+                case '1': case 'mercúrio': case 'mercurio':
+                    let mercu = valor * 0.38
+                    res.innerHTML = `Seu peso em Mercúrio ficaria ${mercu.toFixed(2)} KG.`
+                    break;
+                case '2': case 'vênus': case 'venus':
+                    let venus = valor * 0.91
+                    res.innerHTML = `Seu peso em Vênus ficaria ${venus.toFixed(2)} KG`
+                    break;
+                case '3': case 'marte':
+                    let marte = valor * 0.38
+                    res.innerHTML = `Seu peso em Marte ficaria ${marte.toFixed(2)} KG.`
+                    break;
+                case '4': case 'jupiter': case 'júpiter':
+                    let jup = valor * 2.54
+                    res.innerHTML = `Seu peso em Júpiter ficaria ${jup.toFixed(2)} KG.`
+                    break;
+                case '5': case 'saturno':
+                    let satu = valor * 1.06
+                    res.innerHTML = `Seu peso em Saturno ficaria ${satu.toFixed(2)} KG`
+                    break;
+                case '6': case 'urano':
+                    let uran = valor * 0.92
+                    res.innerHTML = `Seu peso em Urano ficaria ${uran.toFixed(2)} KG`
+                    break;
+                default:
+                    alert("Valor digitado Incorreto.")
+                    break
+            }
+
+        }
+    </script>
+</body>
+</html>

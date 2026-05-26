@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 25 C</title>
+</head>
+<body>
+    <h1>Exercício 25 Proposta diferente v2</h1>
+    <h1>Exercício 25</h1>
+    <h2>Ordenando Valores - Modo Nativo (Moderno)</h2>
+    <span>Digite o primeiro valor <input type="number" id="n1"></span><br><br>
+    <span>Digite o segundo valor <input type="number" id="n2"></span><br><br>
+    <span>Digite o terceiro valor <input type="number" id="n3"></span><br><br>
+    <button onclick="ordenadorValores()">Ordenar Valores</button>
+    <div id="resultado"></div>
+
+    <script>
+        function ordenadorValores(){
+            let n1 = Number(document.getElementById("n1").value)
+            let n2 = Number(document.getElementById("n2").value)
+            let n3 = Number(document.getElementById("n3").value)
+            let res = document.getElementById("resultado")
+
+            let listaNumeros = [n1, n2, n3];
+
+            listaNumeros.sort((a,b) => b - a);
+            res.innerHTML = `Na ordem: ${listaNumeros.join(" -> ")}`
+        }
+    </script>
+</body>
+</html>

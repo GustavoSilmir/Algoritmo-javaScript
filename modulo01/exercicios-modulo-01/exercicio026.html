@@ -17,9 +17,52 @@
             <h2>/   Divisão</h2>
         </div>
         <div class="resultado">
+            <h2>Digite os valores</h2>
+            <span>Digite o Primeiro Valor <input type="number" id="n1"></span><br><br>
+            <span>Digite o Segundo Valor <input type="number" id="n2"></span>
             <h2>Escolha sua opção abaixo</h2>
-            <span>Digite o que você deseja <input type="number"></span>
+            <span>Digite o que você deseja <input type="text" id="tabuada"></span><button onclick="calcularValores()">Calcular</button><br><br>
         </div>
+        <div id="resultado"></div>
     </div>
+
+    <script>
+        function calcularValores(){
+            let n1 = Number(document.getElementById("n1").value)
+            let n2 = Number(document.getElementById("n2").value)
+            let n3 = document.getElementById("tabuada")
+            let tabuada = n3.value.toLowerCase().trim();
+            let res = document.getElementById("resultado")
+            if (tabuada.length === 0){
+                alert("Por favor, digite uma opção");
+                return;
+            }
+            
+            switch(tabuada){
+                case '1': case "soma": case "+":
+                    let soma = n1 + n2;
+                    res.innerHTML = `O valor da soma é de ${soma}`                    
+                    break;
+                case '2': case "subtrair" : case "-":
+                    let sub = n1 - n2;
+                    res.innerHTML = `O valor da subtração é de ${sub}`
+                    break;
+                case '3': case "multiplicar": case "mult": case "*":
+                    let mult = n1 * n2;
+                    res.innerHTML = `O valor da multiplicação é de ${mult}`
+                    break;
+                case '4': case "divisao": case "divisão": case "div": case "/":
+                    let div = n1 / n2;
+                    res.innerHTML = `O valor da divisão é de ${div}`
+                    break
+                default:
+                    res.innerHTML = 'Valor digitado não permitido'
+                    break;
+            }
+
+            
+            
+        }
+    </script>
 </body>
 </html>

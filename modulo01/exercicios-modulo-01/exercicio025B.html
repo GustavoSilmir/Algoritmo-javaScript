@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 25 B</title>
+</head>
+<body>
+    <h1>Proposta diferente Exercício 25</h1>
+     <h2>Ordenando 3 Valores - Modo antigo</h2>
+    <span>Digite o primeiro valor <input type="number" id="n1"></span><br><br>
+    <span>Digite o segundo valor <input type="number" id="n2"></span><br><br>
+    <span>Digite o terceiro valor <input type="number" id="n3"></span><br><br>
+    <button onclick="ordenadorValores()">Ordenar Valores</button>
+    <div id="resultado"></div>
+    <script>
+        function ordenadorValores() {
+             let txtn1 = document.getElementById("n1")
+            let txtn2 = document.getElementById("n2")
+            let txtn3 = document.getElementById("n3")
+            let n1 = Number(txtn1.value)
+            let n2 = Number(txtn2.value)
+            let n3 = Number(txtn3.value)
+            let res = document.getElementById("resultado")
+            res.innerHTML += `Primeiro valor ${n1}<br>`
+            res.innerHTML += `Segundo valor ${n2}<br>`
+            res.innerHTML += `Terceiro valor ${n3}<br><br>`
+            res.innerHTML += `VALORES ORDENADOS<br><br>`
+            if( n1 > n2){
+                if (n3 > n1){
+                    res.innerHTML += `Na ordem ${n3} - ${n1} - ${n2}`
+                }else if(n3 > n2){
+                     res.innerHTML += `Na ordem ${n1} - ${n3} - ${n2}`
+                }else{
+                     res.innerHTML += `Na ordem ${n1} - ${n2} - ${n3}`
+                }
+            }else if(n3 > n2){
+                 res.innerHTML += `Na ordem ${n3} - ${n2} - ${n1}`
+            }else if (n3 > n1){
+                 res.innerHTML += `Na ordem ${n2} - ${n3} - ${n1}`
+            }else {
+                 res.innerHTML += `Na ordem ${n2} - ${n1} - ${n3}`
+            }
+        }
+    </script>
+</body>
+</html>

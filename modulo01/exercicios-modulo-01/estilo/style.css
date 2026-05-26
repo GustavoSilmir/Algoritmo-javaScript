@@ -2,13 +2,9 @@
     display: flex;
     align-items: center ;
     flex-direction: column;
+    width: auto;
+    height: auto;
+    
 }
 
 
-.tabuada{
-    width: 150px;
-    height: 150px;
-    
-    
-    
-}
