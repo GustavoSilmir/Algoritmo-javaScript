@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Acumulador com While Real</title>
+</head>
+<body>
+    <h1>Somador de 4 Números (Modo While)</h1>
+    
+    <span id="textoOrientacao">Digite o 1º número:</span>
+    <input type="number" id="numInput">
+    <button onclick="adicionarNumero()" id="btnAdicionar">Adicionar</button>
+    
+    <div id="resultado"></div>
+
+    <script>
+        // Variáveis globais mantidas fora para não resetarem
+        let s = 0; // Soma
+        let c = 1; // Contador
+
+        function adicionarNumero() {
+            let txtN = document.getElementById("numInput");
+            let res = document.getElementById("resultado");
+            let orientacao = document.getElementById("textoOrientacao");
+            let botao = document.getElementById("btnAdicionar");
+
+            // Validação de campo vazio
+            if (txtN.value.length === 0) {
+                alert("Por favor, digite um número.");
+                return;
+            }
+
+            let n = Number(txtN.value);
+            let m = 0;
+            // USANDO O WHILE: 
+            // Ele verifica a condição. Como a função roda a cada clique, 
+            // o "while" executa apenas uma vez por clique porque incrementamos o 'c' lá dentro,
+            // quebrando a condição logo em seguida e esperando o próximo clique.
+            while (c <= 4) {
+                s = s + n; // Acumula o valor atual
+                res.innerHTML += `Número ${c} digitado: <strong>${n}</strong><br>`;
+                
+                c = c + 1; // Avança o contador (isso faz a condição do while virar falsa para o próximo loop)
+                
+                // Atualiza a interface gráfica
+                if (c <= 4) {
+                    orientacao.innerHTML = `Digite o ${c}º número:`;
+                } else {
+                    m = s / 4;
+                    orientacao.innerHTML = "Contagem finalizada!";
+                    res.innerHTML += `<br><strong>A SOMA TOTAL É: ${s}</strong> 🏁`;
+                    res.innerHTML += `<br><strong>A MÉDIA TOTAL É: ${m}</strong> 🏁`;
+                    
+                    txtN.disabled = true;
+                    botao.disabled = true;
+                }
+                
+                // Break de segurança: garante que o while pare e passe o controle de volta para a tela do navegador
+                break; 
+            }
+
+            // Limpa o campo e devolve o foco
+            txtN.value = "";
+            txtN.focus();
+        }
+    </script>
+</body>
+</html>

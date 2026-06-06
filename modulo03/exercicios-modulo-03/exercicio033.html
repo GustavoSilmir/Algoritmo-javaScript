@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 33</title>
+</head>
+<body>
+    <h1>Exercício 33 - Sortear números</h1>
+    <span>Quantos números vamos sortear? <input type="number" id="numero"></span>
+    <button onclick="sortearNumero()">SORTEAR</button>
+    <div id="resultado"></div>
+    <script>
+         let contador = 1;
+            let soma = 0;
+            let somaimpar = 0;
+            let somapar = 0;
+        function sortearNumero(){
+           let txtn = document.getElementById("numero");
+           let res = document.getElementById("resultado")
+           if(txtn.value.length === 0){
+            alert("Por favor, digite um número.");
+            return;
+           }
+
+           let n = Number(txtn.value);
+           while(contador <= n){
+            let numeroSorteado100 = Math.floor(Math.random() * 100) + 1;
+            res.innerHTML += `<br> ${contador}° número sorteado:  ${numeroSorteado100}`
+                contador++
+           }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 31</title>
+</head>
+<body>
+    <h1>Exercício 31</h1>
+    <span>Onde começa a contagem <input type="number" id="valor"></span><br><br>
+    <span>Quais múltiplos marcar?<input type="number" id="marcar"></span><br><br>
+    <button onclick="verificarValor()">Analisar</button>
+    <div id="resultado"></div>
+    <script>
+        function verificarValor(){
+            let txtn1 = document.getElementById("valor");
+            let txtn2 = document.getElementById("marcar");
+            let valor = Number(txtn1.value);
+            let marcar = Number(txtn2.value);
+            let res = document.getElementById("resultado");
+            let inicio = valor
+            while(valor >= 0){
+                if(valor % marcar == 0){
+                    res.innerHTML += `[${valor}]-`
+                }else{
+                   res.innerHTML += `${valor} -`
+
+                }
+                    valor--
+            }
+            res.innerHTML += "FIM"
+        }
+    </script>
+</body>
+</html>

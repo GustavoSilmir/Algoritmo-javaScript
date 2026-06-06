@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 32</title>
+</head>
+<body>
+<h1>Exercício 32</h1>
+<span id="textoOrientacao">Digite o 1° número:</span>
+<input type="number" id="numInput">
+<button onclick="adicionarNumero()" id="btnAdicionar">Adicionar</button>
+<div id="resultado"></div>
+<script>
+     let s = 0;
+   let somapar = 0;
+   let  somaimpar = 0;
+    let contador = 1;
+    function adicionarNumero(){
+      let txtN = document.getElementById("numInput");
+            let res = document.getElementById("resultado");
+            let orientacao = document.getElementById("textoOrientacao");
+            let botao = document.getElementById("btnAdicionar");
+
+            if(txtN.value.length === 0){
+                alert("Por favor, digite um número.");
+                return;
+            }
+            
+            let n = Number(txtN.value);
+            while(contador <= 5){
+                s += n
+                if (n % 2 === 0){
+                    somapar = somapar + n;
+                } else {
+                    somaimpar = somaimpar + n;
+                }
+
+                res.innerHTML += `Número ${contador} digitado: <strong>${n}</strong><br>`;
+                contador++
+                if(contador <= 5){
+                    orientacao.innerHTML = `Digite o ${contador}° número:`
+                }else{
+                    orientacao.innerHTML = "Contagem finalizada";
+                    res.innerHTML += `<br><strong>A soma dos pares é: ${somapar}</strong>`
+                    res.innerHTML += `<br><strong>A soma dos ímpares é: ${somaimpar}</strong>`
+                     res.innerHTML += `<br><strong>A soma de todos os valores é de: ${s}</strong>`
+                    txtN.disabled = true;
+                    botao.disabled = true;
+                }
+                break;
+            }
+            txtN.value = "";
+            txtN.focus();
+    }
+</script>
+</body>
+</html>
