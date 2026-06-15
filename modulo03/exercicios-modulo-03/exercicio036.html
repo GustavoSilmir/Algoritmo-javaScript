@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 36</title>
+</head>
+<body>
+    <h1>Exercício 36</h1>
+    <span>Quantos números você quer sortear? </span>
+    <input type="number" id="sortea"><br><br>
+    <button onclick="calculaValores()">Sortear</button><br><br>
+    <div id="resultado"></div>
+    <script>
+        let contador = 1;
+        function calculaValores(){
+            let txtn1 = document.getElementById("sortea")
+            let res = document.getElementById("resultado")
+            if(txtn1.value.length === 0){
+                alert("Digite um valor")
+            }
+            let sortea = Number(txtn1.value)
+            while(contador <= sortea){
+                let numero1a100 = Math.floor(Math.random() * 100) + 1;
+                res.innerHTML += `${numero1a100}<br>`
+                contador++
+            }
+        }
+    </script>
+</body>
+</html>

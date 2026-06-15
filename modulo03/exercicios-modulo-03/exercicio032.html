@@ -56,3 +56,69 @@
 </script>
 </body>
 </html>
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 35</title>
+</head>
+<body>
+    <h1>Exercício 35 - Cadastro de Pessoas</h1>
+    <span id="textoOrientacao">Quantas Pessoas vamos cadastrar?</span>
+    <input type="number" id="numInput">
+    <button onclick="adicionarNumero()" id="btnAdicionar">Iniciar Cadastro</button>
+    
+    <div id="resultado"></div>
+
+    <script>
+        // Variáveis globais prontas para as estatísticas que você vai criar depois
+        let homens = 0;
+        let mulheres = 0;
+
+        function adicionarNumero(){
+            let txtn = document.getElementById("numInput");
+            let res = document.getElementById("resultado");
+            
+            if(txtn.value.length === 0 || Number(txtn.value) <= 0){
+                alert("Por favor, digite um valor válido maior que zero.");
+                return;
+            }
+
+            let totalPessoas = Number(txtn.value);
+            let contador = 1; // Começa na pessoa 1
+
+            res.innerHTML = "<h3>Histórico de Cadastro:</h3>";
+
+            // O WHILE vai rodar direto até atingir o total de pessoas digitado
+            while(contador <= totalPessoas){
+                
+                // Abre a janelinha perguntando o peso e já converte para número
+                let pesoDigitado = Number(prompt(`Digite o PESO da ${contador}ª pessoa:`));
+                
+                // Abre a janelinha perguntando o sexo e já limpa o texto
+                let sexoDigitado = prompt(`Digite o SEXO da ${contador}ª pessoa (M/F):`).toLowerCase().trim();
+
+                // Mostra na tela o que foi cadastrado para o usuário acompanhar
+                res.innerHTML += `Pessoa ${contador}: Peso ${pesoDigitado}kg | Sexo: ${sexoDigitado.toUpperCase()}<br>`;
+
+                // --- Aqui você vai construir a sua lógica de estatísticas ---
+                // Exemplo básico:
+                if (sexoDigitado === 'm' || sexoDigitado === 'masculino') {
+                    homens++;
+                } else if (sexoDigitado === 'f' || sexoDigitado === 'feminino') {
+                    mulheres++;
+                }
+
+                contador++; // Avança para a próxima pessoa. Sem break aqui para ele continuar perguntando!
+            }
+
+            // Exibe o relatório final após o término do loop
+           
+        }
+    </script>
+</body>
+</html>
