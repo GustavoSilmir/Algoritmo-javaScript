@@ -13,6 +13,9 @@
     <div id="resultado"></div>
     <script>
         let contador = 1;
+        let maiorquecinco = 0;
+        let divididoportres = 0;
+        
         function calculaValores(){
             let txtn1 = document.getElementById("sortea")
             let res = document.getElementById("resultado")
@@ -23,8 +26,20 @@
             while(contador <= sortea){
                 let numero1a100 = Math.floor(Math.random() * 100) + 1;
                 res.innerHTML += `${numero1a100}<br>`
+                if(numero1a100 > 5){
+                    maiorquecinco++
+                }
+                
+                if(numero1a100 % 3 === 0){
+                    divididoportres++
+                }
                 contador++
+                
+               
+                
             }
+             res.innerHTML += `${maiorquecinco} são maiores que cinco<br>`
+                res.innerHTML += `${divididoportres} são divisores de 3<br>`
         }
     </script>
 </body>
