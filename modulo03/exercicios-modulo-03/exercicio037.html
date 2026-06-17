@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 37</title>
+</head>
+<body>
+    <h1>Exercício 37</h1>
+    <h2>Usuário escolhe quantos usuários cadastrar</h2>
+    <h2>Exibir: Pessoa mais jovem e mais velha com nome e idade</h2>
+    <span>Quantas pessoas você quer cadastrar?</span>
+    <input type="number" id="valor">
+    <button onclick="cadastroPessoas()">Cadastrar</button>
+    <div id="resultado"></div>
+    <script>
+        let idademaisjovem = 0;
+        let idademaisvelho = 0;
+        let nomemaisnovo = "";
+        let nomemaisvelho = "";
+        let contador = 1;
+        function cadastroPessoas(){
+            let txtn1 = document.getElementById("valor")
+            if(txtn1.value.length === 0){
+                alert("Digite um valor válido")
+            }
+            let res = document.getElementById("resultado")
+            let valor = Number(txtn1.value);
+            res.innerHTML = `<h3>Histórico de cadastro:</h3>`
+            while(contador <= valor ){
+                let nomeDigitado = prompt(`Digite o Nome da ${contador}° pessoa:`);
+                let idadeDigitado = Number(prompt(`Digite a Idade da ${contador}° pessoa.`))
+
+                res.innerHTML += `Pessoa ${contador}: Nome ${nomeDigitado} | Idade: ${idadeDigitado} <br><br>`
+                if(contador === 1){
+                    nomemaisnovo = nomeDigitado
+                    nomemaisvelho = nomeDigitado
+                    idademaisjovem = idadeDigitado
+                    idademaisvelho = idadeDigitado
+                }else{
+                    if( idadeDigitado < idademaisjovem ){
+                        idademaisjovem = idadeDigitado;
+                        nomemaisnovo = nomeDigitado;
+                    }
+                    if(idadeDigitado > idademaisvelho ){
+                        idademaisvelho = idadeDigitado
+                        nomemaisvelho = nomeDigitado
+                    }
+                }
+
+                contador++
+            }
+
+            res.innerHTML += `<br><strong>Cadastro concluído!</strong>`;
+            res.innerHTML += `<br> A pessoa mais jovem é ${nomemaisnovo} com idade de ${idademaisjovem}`;
+            res.innerHTML += `<br> A pessoa mais velha é ${nomemaisvelho} com idade de ${idademaisvelho}.`
+
+            txtn1.value = "";
+        }
+    </script>
+</body>
+</html>
