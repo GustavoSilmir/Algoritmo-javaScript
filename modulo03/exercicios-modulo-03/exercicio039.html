@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 39</title>
+</head>
+<body>
+    <h1>Exercício 39</h1>
+    <h2>Lendo Dados</h2>
+    <h3>Digitar 9999 o programa para</h3>
+    <h3>Exibir: total de valores digitados, a soma de todos os valores, a média dos valores, o maior valor digitado.</h3>
+
+    <button onclick="analisarNumeros()">Iniciar inserção de números</button>
+    <div id="resultado"></div>
+    <script>
+        function analisarNumeros(){
+            let soma = 0;
+            let totalvalores =0;
+            let maior = 0;
+            let valorDigitado = 0;
+            let contador = 1;
+            let res = document.getElementById("resultado")
+            res.innerHTML += `<br><strong>Histórico de valores digitados:</strong><br>`
+            while(valorDigitado != 9999){
+                valorDigitado = Number(prompt(`Digite o ${contador}° número.`))
+                
+                if(valorDigitado != 9999){
+                    res.innerHTML += `${contador}° Valor: ${valorDigitado}<br><br>`
+                    soma += valorDigitado
+                    totalvalores++
+                    if(totalvalores == 1){
+                        maior = valorDigitado
+                    }else{
+                        if(valorDigitado > maior){
+                            maior = valorDigitado
+                        }
+                    }
+                    contador++
+                }
+                
+            }
+            if (totalvalores > 0){
+                
+            
+            let media = soma / totalvalores;
+            res.innerHTML += `<br> O total de valores digitados foi de ${totalvalores}.<br><br>`
+            res.innerHTML += `<br> A soma dos valores digitados é de ${soma}.<br><br>`
+            res.innerHTML += `<br>A média dos valores digitados é de ${media.toFixed(2)}<br><br>`
+            res.innerHTML += `<br> O maior valor digitado foi o ${maior}`
+            }
+        }
+    </script>
+</body>
+</html>

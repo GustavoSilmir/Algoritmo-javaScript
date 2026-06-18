@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 40</title>
+</head>
+<body>
+    <h1>Exercício 40</h1>
+    <h2>Calculadora</h2>
+    <button onclick="calcularValores()">Usar Calculadora</button>
+    <div id="resultado"></div>
+    <script>
+        function calcularValores(){
+            let res = document.getElementById("resultado")
+
+            let valor1 = Number(prompt("Digite o 1° Valor:"));
+            let valor2 = Number(prompt("Digite o 2° Valor:"));
+            
+            // Declaramos a opção começando em 0 para o while poder rodar a primeira vez
+            let opcao = 0;
+            
+           
+            while(opcao !== 5){
+            let menuAtualizado = `--- CALCULADORA ---\nValores atuais: [${valor1}] e [${valor2}]\n\n` +
+                                     `1 🔹 Adição\n2 🔹 Subtração\n3 🔹 Multiplicação\n4 🔄 Novos números\n\n5 🚪 Sair\n\nDigite a opção:`;
+            opcao = Number(prompt(menuAtualizado))
+               switch(opcao){
+                
+                case 1:
+                   let soma = valor1 + valor2;
+                   alert(`[SOMA] A soma entre ${valor1} + ${valor2} é: ${soma}`)          
+                break;
+                case 2:
+                   let sub = valor1 - valor2;
+                   alert(`[SUBTRAÇÃO] A subtração entre ${valor1} - ${valor2} é: ${sub}`)          
+                break;
+
+                case 3:
+                        let mult = valor1 * valor2;
+                        alert(`[MULTIPLICAÇÃO] O produto de ${valor1} x ${valor2} é: ${mult}`);
+                        break;
+                        
+                    case 4:
+                        // Aqui o usuário altera os números da memória sem reiniciar o programa!
+                        valor1 = Number(prompt("Digite o NOVO 1° Valor:"));
+                        valor2 = Number(prompt("Digite o NOVO 2° Valor:"));
+                        break;
+
+                    case 5:
+                        alert("Saindo do sistema de calculadora...");
+                        break;
+                default:
+                        alert("Opção inválida! Tente novamente.");
+                        break;
+               }
+               
+            }
+
+            res.innerHTML = `<h3>Calculadora finalizada com sucesso! 🏁</h3>`;
+        }
+    </script>
+</body>
+</html>
