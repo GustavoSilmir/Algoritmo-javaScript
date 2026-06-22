@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 41</title>
+</head>
+<body>
+    <h1>Exercício 41</h1>
+    <h2>cadastro de amigos, nome e idade</h2>
+    <h3>Exibir: Amigo mais velho e mais jovem nome e idade. Média de idade do grupo</h3>
+    <button onclick="cadastrarAmigos()">Cadastrar Amigos</button>
+    <div id="resultado"></div>
+    <script>
+        function cadastrarAmigos(){
+            let nomeDigitado = "";
+            let idadeDigitado = 0;
+            let nomeMaisVelho = "";
+            let nomeMaisNovo = "";
+            let idadeMaisNovo = 0;
+            let idadeMaisVelho = 0;
+            let soma = 0;
+            let totalvalores = 0;
+            let res = document.getElementById("resultado")
+            let contador = 1;
+             res.innerHTML += `<br><strong>Histórico de valores digitados:</strong><br>`
+            while(contador <= 3){
+                
+                nomeDigitado = prompt(`Digite o nome do  ${contador}° Amigo: `);
+               idadeDigitado = Number(prompt(`Digite a idade do ${contador}° Amigo: `));
+               res.innerHTML += `<br><strong> NOME: ${nomeDigitado} | IDADE: ${idadeDigitado}</strong><br><br>`
+                soma += idadeDigitado
+                totalvalores++
+                if(totalvalores == 1){
+                    idadeMaisNovo = idadeDigitado;
+                    idadeMaisVelho = idadeDigitado;
+                    nomeMaisNovo = nomeDigitado;
+                    nomeMaisVelho = nomeDigitado;
+                }else{
+                    if(idadeDigitado < idadeMaisNovo){
+                        idadeMaisNovo = idadeDigitado
+                        nomeMaisNovo = nomeDigitado
+                    }
+                    if(idadeDigitado > idadeMaisVelho){
+                        idadeMaisVelho = idadeDigitado;
+                        nomeMaisVelho = nomeDigitado
+                    }
+                }
+                
+                contador++
+            }
+            if(totalvalores > 0){
+
+            
+            let media = soma / totalvalores;
+            res.innerHTML += `Resultado Final`
+            res.innerHTML += `<br> De todos os amigos cadastrados<br>`;
+            res.innerHTML += `<br> O mais jovem é o ${nomeMaisNovo} com idade de ${idadeMaisNovo}.<br>`
+            res.innerHTML += `<br>O mais velho é o ${nomeMaisVelho} com idade de ${idadeMaisVelho}<br>`
+            res.innerHTML += `<br>A média de todas idades cadastradas é de ${media.toFixed(2)}<br>`
+            }
+        }
+            
+        
+    </script>
+</body>
+</html>

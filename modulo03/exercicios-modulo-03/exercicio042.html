@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 42</title>
+</head>
+<body>
+    <h1>Exercício 42</h1>
+    <h2>Cadastrar Funcionário</h2>
+    <h3>Exibir: Total pessoas Cadastradas.</h3>
+    <h3>Total homens, mulheres</h3>
+    <h3>Média Salarial Homens e Mulheres</h3>
+    <h3>Total homens e mulheres que ganham + R$ 1000,00</h3>
+    <h3>Maior salário Homem e mulher</h3>
+    <button onclick="cadastrarFuncionario()">Cadastrar Funcionário</button>
+    <div id="resultado"></div>
+    <script>
+        function cadastrarFuncionario(){
+            let res = document.getElementById("resultado");
+            let totalPessoas = 0;
+            let nomeDigitado = "";
+            let sexo = "";
+            let salario = 0;
+            let resposta = "";
+            let totalHomens = 0;
+            let totalMulheres = 0;
+            let totalSalarios = 0;
+            let mulheresMaisMil = 0;
+            let homensMaisMil = 0;
+            let nomeMaiorSalarioMulher = "";
+            let valorMaiorSalarioMulher = 0;
+            let nomeMaiorSalarioHomem = "";
+            let valorMaiorSalarioHomem = 0;
+            let totalSalarioHomem = 0;
+            let totalSalarioMulher = 0;
+            let contador = 1;
+             res.innerHTML += `<br><strong>Histórico de valores digitados:</strong><br>`
+            while(true){
+                nomeDigitado = prompt(`Digite o nome da ${contador}° Funcionário.`);
+                sexo = prompt(`Qual Sexo do Funcionário? [F/M]`).toLocaleLowerCase();
+                salario = Number(prompt(`Quanto ganha esse funcionário R$: `));
+                
+                totalSalarios += salario
+                totalPessoas++
+                res.innerHTML += `<br><strong>Nome: ${nomeDigitado} | Sexo: ${sexo} | Salário R$: ${salario}</strong><br>`
+                if(sexo == 'f' || sexo == 'feminino' || sexo == 'mulher'){
+                    totalSalarioMulher += salario
+                    totalMulheres++
+                    if(salario > 1000){
+                        mulheresMaisMil++
+                    }
+                    if(totalMulheres == 1){
+                        nomeMaiorSalarioMulher = nomeDigitado;
+                        valorMaiorSalarioMulher = salario;
+                    }else{
+                        if(salario > valorMaiorSalarioMulher){
+                            valorMaiorSalarioMulher = salario;
+                            nomeMaiorSalarioMulher = nomeDigitado;
+                        }
+                    }
+                }else{
+                    if(sexo == 'm' || sexo == 'masculino' || sexo == 'homem'){
+                        totalHomens++
+                        totalSalarioHomem += salario
+                        if(salario > 1000){
+                            homensMaisMil++
+                        }
+
+                         if(totalHomens == 1){
+                        nomeMaiorSalarioHomem = nomeDigitado;
+                        valorMaiorSalarioHomem = salario;
+                    }else{
+                        if(salario > valorMaiorSalarioHomem){
+                            valorMaiorSalarioHomem = salario;
+                            nomeMaiorSalarioHomem = nomeDigitado;
+                        }
+                    }
+
+                    }
+                }
+                resposta = prompt(`Quer Continuar? [S/N]`).toLocaleLowerCase()
+                if(resposta == 'não' || resposta == 'n' || resposta == 'nao'){
+                    break;
+                }
+
+                contador++
+            }
+
+          
+                let mediaSalarioMulher = totalMulheres > 0 ? totalSalarioMulher / totalMulheres : 0;
+                let mediaSalarioHomem = totalHomens > 0 ? totalSalarioHomem / totalHomens : 0;
+
+            if(totalPessoas > 0){
+                res.innerHTML += `<br>O total de pessoas cadastradas é de ${totalPessoas}<br>`
+                res.innerHTML += `<br> O total de homens cadastrados é de ${totalHomens}.<br>`
+                res.innerHTML += `<br>O total de mulheres cadastradas é de ${totalMulheres}.<br>`
+                res.innerHTML += `<br>O total de homens que ganham mais que R$ 1000,00 é de ${homensMaisMil}.<br>`
+                res.innerHTML += `<br>O total de mulheres que ganham mais que R$ 1000,00 é de ${mulheresMaisMil}.<br>`
+                res.innerHTML += `<br>A média de salários entre as mulheres é de ${mediaSalarioMulher.toFixed(2)}<br>`
+                res.innerHTML += `<br>A média de salários entre os homens é de ${mediaSalarioHomem.toFixed(2)}<br>`
+                res.innerHTML += `<br> O Maior salário entre os homens é do ${nomeMaiorSalarioHomem} que recebe um salário de ${valorMaiorSalarioHomem.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}<br>`;
+
+res.innerHTML += `<br> O Maior salário entre as mulheres é a ${nomeMaiorSalarioMulher} que recebe um salário de ${valorMaiorSalarioMulher.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}<br>`;
+
+            }
+        }
+    </script>
+</body>
+</html>
