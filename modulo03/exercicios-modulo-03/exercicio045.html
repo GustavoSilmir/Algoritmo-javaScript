@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 45</title>
+</head>
+<body>
+    <h1>Exercício 45</h1>
+    <button onclick="jogoNumeros()">Jogar</button>
+    <div id="resultado"></div>
+    <script>
+        function jogoNumeros(){
+            let numeroSorteado = Math.floor(Math.random() * 10) + 1;
+            let acertou = false;
+            let tentativa = 0;
+            let total = 3;
+            let palpite = 0;
+            let chances = 1
+
+            do{
+                
+                console.log(numeroSorteado)
+                palpite = Number(prompt(`
+                Eu pensei em um número de 1 a 10
+                Qual você acha que é? `))
+                  if(palpite == numeroSorteado){
+                        acertou = true
+                        alert(`Parabéns você acertou na tentativa ${chances}/3`)
+                        break;
+                    }else{
+                       alert("Infelizmente não foi dessa vez.") 
+                       chances++
+                       if(chances <= total){
+                        if(palpite < numeroSorteado){
+                            alert("Tente um número MAIOR.")
+                        }else{
+                            alert("Tente um número MENOR.")
+                        }
+                       }else{
+                            alert("Suas chances ACABARAM!")
+                            break;
+                       }
+                                     
+               
+            }
+                
+            }while(!acertou)
+
+        }
+    </script>
+</body>
+</html>

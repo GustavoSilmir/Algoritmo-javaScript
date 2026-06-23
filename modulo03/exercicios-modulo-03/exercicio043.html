@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 43</title>
+</head>
+<body>
+    <h1>Exercício 43</h1>
+    <h2>Exibir: Total de números, Quantos números pares e menor valor ímpar</h2>
+    <button onclick="calcularValores()">Digitar números</button>
+    <div id="resultado"></div>
+    <script>
+        function calcularValores(){
+            let numeros = 0;
+            let numerosPares = 0;
+            let menorImpar = 0;
+            let resp = "";
+            let contador = 1;
+            let totalNumeros = 0;
+            let res = document.getElementById("resultado")
+            do{
+            numeros = prompt(`Digite o ${contador}° número: `)
+            res.innerHTML += `<br>Número ${contador}° : ${numeros}<br>`;
+            totalNumeros++
+            if(numeros % 2 == 0){
+                numerosPares++
+            }else{
+                if(totalNumeros == 1){
+                    menorImpar = numeros
+                }else{
+                    if(numeros < menorImpar){
+                        menorImpar = numeros
+                    }
+                }
+            }
+            
+            resp = prompt(`Quer Continuar? [S/N] `).toLowerCase();
+            contador++
+            }while(resp == 's' || resp == 'sim')
+
+            res.innerHTML += `<br>O total de valores digitados foi de <strong>${totalNumeros}</strong><br>`
+            res.innerHTML += `<br>O total de números Pares digitados foi de ${numerosPares}<br>`
+            res.innerHTML += `<br>O menor valor ÍMPAR digitado foi o ${menorImpar}<br>`
+        }
+    </script>
+</body>
+</html>

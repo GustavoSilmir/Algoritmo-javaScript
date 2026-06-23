@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 44</title>
+</head>
+<body>
+    <h1>Exercício 44</h1>
+    <h2>Exibir: Quantos numeros sorteados, a soma de todos, o maior e menor valor, o valor 5  </h2>
+    <!--O número máximo é 10 e o mínimo é 1
+let numeroSorteado = Math.floor(Math.random() * 10) + 1;
+
+console.log(numeroSorteado); // Vai exibir um número inteiro entre 1 e 10-->
+
+    <button onclick="sortearValores()">Sorteador de Números</button>
+    <div id="resultado"></div>
+    <script>
+        function sortearValores(){
+            let numeroSorteado = 0;
+            let totalSorteados = 0;
+            let somaValores = 0;
+            let maiorValor = 0;
+            let menorValor = 0;
+            let cincoSorteado = 0;
+            let contador = 1;
+            let resp = "";
+            let res = document.getElementById("resultado");
+            do{
+            numeroSorteado = Math.floor(Math.random() * 15) + 1;
+            res.innerHTML += `<br>${contador}° Número Sorteado <strong>${numeroSorteado}</strong><br>`
+            totalSorteados++
+            somaValores += numeroSorteado
+            if(totalSorteados == 1){
+                maiorValor = numeroSorteado;
+                menorValor = numeroSorteado
+            }else{
+                if(numeroSorteado > maiorValor){
+                    maiorValor = numeroSorteado
+                }
+                if(numeroSorteado < menorValor){
+                    menorValor = numeroSorteado
+                }
+            }
+            if(numeroSorteado === 5){
+                cincoSorteado++
+            }
+            
+            resp = prompt(`
+            O ${contador}° valor sorteado foi ${numeroSorteado}.            
+            Você quer Continuar?[S/N]
+             `).toLocaleLowerCase();
+            contador++
+            }while(resp == 'sim' || resp == 's')
+            res.innerHTML += `<br>O total de números sorteados foi de ${totalSorteados}<br>`;
+            res.innerHTML += `<br>A soma de todos os números sorteados é de ${somaValores}<br>`
+            res.innerHTML += `<br>O maior valor sorteado foi o ${maiorValor} || O menor valor sorteado foi o ${menorValor}<br>`;
+            res.innerHTML += `<br>O número 5 foi sorteado ${cincoSorteado}<br>`
+        }
+    </script>
+     
+</body>
+</html>
