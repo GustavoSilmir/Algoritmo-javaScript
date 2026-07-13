@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 50</title>
+</head>
+<body>
+    <h1>Exercício 50</h1>
+    <h2>Tabuada de x até x</h2>
+    <button onclick="calculoTabuada()">Verificar Tabuada</button>
+    <div id="resultado"></div>
+    <script>
+        function calculoTabuada(){
+            let res = document.getElementById("resultado");
+            let tabuada1 = Number(prompt("Digite onde deve iniciar a Tabuada: "))
+            let tabuada2 = Number(prompt("Digite onde deve terminar a Tabuada: "))
+            res.innerHTML = "";
+            for(let init = tabuada1; init <= tabuada2; init++){
+                res.innerHTML += `<br><h3>Tabuada do ${init}:</h3>`;
+                for(let calc = 1; calc <= 10; calc++){
+                    let calculo = init * calc;
+                    res.innerHTML += `${init} x ${calc} = <strong>${calculo}</strong><br>`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

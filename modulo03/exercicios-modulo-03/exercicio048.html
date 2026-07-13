@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 48</title>
+</head>
+<body>
+    <h1>Exercício 48</h1>
+    <h2>Verificar se o número é primo ou não.</h2>
+    <button onclick="verificarNumeroPrimo()">Vamos verificar</button>
+    <div id="resultado"></div>
+    <script>
+        function verificarNumeroPrimo(){
+            let res = document.getElementById("resultado");
+            let total = 0;
+            let valor = Number(prompt("Qual número vamos verificar? "))
+            for(let contador = 1; contador <= valor; contador++){
+                if(valor % contador == 0){
+                    res.innerHTML += ` [${contador}] `
+                    total++
+                }else{
+
+                    res.innerHTML += ` ${contador} -> `;
+                }
+               
+                
+            }
+
+             if(total == 2){
+                    res.innerHTML += `<br>Número digitado é PRIMO ele é divísivel ${total} vezes.`
+                }else{
+                    res.innerHTML +=`<br>Número não é primo ele é divisível ${total} vezes.`
+                }
+        }
+    </script>
+</body>
+</html>

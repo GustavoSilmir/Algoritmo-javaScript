@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 52</title>
+</head>
+<body>
+    <h1>Exercício 052</h1>
+    <button onclick="calculoPiramide()">Pirâmide</button>
+    <div id="resultado"></div>
+    <script>
+        function calculoPiramide(){
+            let res = document.getElementById("resultado");
+            let and = Number(prompt("Quantos andares a pirâmide vai ter? "))
+
+            let quantEst = (and * 2) - 1
+            let quantEsp = 0
+            for(let cAnd = 1; cAnd <= and; cAnd++){
+                for(let cEsp = 1; cEsp <= quantEsp; cEsp++){
+
+                
+                res.innerHTML += `&nbsp;`;
+            }
+            quantEsp++
+            for(let cEst = 1; cEst <= quantEst; cEst++){
+                res.innerHTML += `*`
+            }
+            res.innerHTML += `<br>`
+            quantEst -= 2
+        }
+        }
+    </script>
+</body>
+</html>

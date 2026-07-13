@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 54</title>
+</head>
+<body>
+    <h1>Exercício 54</h1>
+    <h2>Cadastrar Pessoas, exibir, total cadastrado, pessoa mais velha, nome e idade e tambem pessoa mais nova</h2>
+    <button onclick="cadastroPessoas()">Cadastrar Pessoas</button>
+    <div id="resultado"></div>
+    <script>
+        function cadastroPessoas(){
+    let res = document.getElementById("resultado");
+    res.innerHTML = "";
+
+    let resp = '';
+    let nome = "";
+    let contador = 0;
+    let idade = 0;
+    
+    // AGORA SÃO ARRAYS (LISTAS)
+    let idademaisvelho = 0;
+    let nomesMaisVelhos = []; 
+    
+    let idademaisnovo = 0;
+    let nomesMaisNovos = []; 
+
+    do {
+        contador++; 
+
+        // [As suas validações de nome e idade continuam iguais aqui]
+        while(true){ nome = prompt(`Nome da ${contador}° pessoa: `).trim(); if(nome.length >= 3) break; }
+        while(true){ idade = Number(prompt(`Idade da ${contador}° pessoa: `)); if(idade >= 0 && idade <= 130) break; }
+
+        res.innerHTML += `👤 Nome: <strong>${nome}</strong> | 🎂 Idade: ${idade} anos<br>`;
+
+        // LÓGICA ATUALIZADA PARA MAIOR, MENOR E EMPATE:
+        if (contador == 1) {
+            idademaisvelho = idade;
+            nomesMaisVelhos = [nome]; // Inicia a lista com o primeiro nome
+
+            idademaisnovo = idade;
+            nomesMaisNovos = [nome];  // Inicia a lista com o primeiro nome
+        } else {
+            
+            // --- VERIFICAÇÃO DE MAIS VELHO ---
+            if (idade > idademaisvelho) {
+                idademaisvelho = idade;
+                nomesMaisVelhos = [nome]; // Descobriu alguém mais velho: limpa a lista e põe o novo
+            } else if (idade === idademaisvelho) {
+                nomesMaisVelhos.push(nome); // Empatou: adiciona o nome na lista sem apagar os outros
+            }
+
+            // --- VERIFICAÇÃO DE MAIS NOVO ---
+            if (idade < idademaisnovo) {
+                idademaisnovo = idade;
+                nomesMaisNovos = [nome]; // Descobriu alguém mais novo: limpa a lista e põe o novo
+            } else if (idade === idademaisnovo) {
+                nomesMaisNovos.push(nome); // Empatou: adiciona o nome na lista sem apagar os outros
+            }
+        }
+
+        // [Sua validação de continuar S/N continua igual aqui]
+        while(true){ resp = prompt("Deseja Continuar?[S/N] ").toLowerCase().trim(); if (resp == 's' || resp == 'n' || resp == 'sim' || resp == 'não' || resp == 'nao') break; }
+
+    } while(resp == 's' || resp == 'sim');
+
+    // EXIBIÇÃO DOS RESULTADOS:
+    // O método .join(", ") junta todos os nomes da lista separando por vírgula
+    res.innerHTML += `<br>--------------------------------------------------<br>`;
+    res.innerHTML += `📊 <strong>Total de pessoas:</strong> ${contador}<br>`;
+    res.innerHTML += `👶 <strong>Mais jovem(ns):</strong> ${nomesMaisNovos.join(", ")} com ${idademaisnovo} anos.<br>`;
+    res.innerHTML += `🧓 <strong>Mais velho(a/s):</strong> ${nomesMaisVelhos.join(", ")} com ${idademaisvelho} anos.<br>`;
+}
+    </script>
+</body>
+</html>

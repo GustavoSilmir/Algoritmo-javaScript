@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 47</title>
+</head>
+<body>
+    <h1>Exercício 047</h1>
+    <h2>Usuário escolhe o início, incremento e fim da contagem.</h2>
+    <button onclick="calculoPersonalizado()">Vamos Exibir Números</button>
+    <div id="resultado"></div>
+    <script>
+        function calculoPersonalizado(){
+            let res = document.getElementById("resultado");
+            let init = Number(prompt("Qual será o INÍCIO da nossa contagem? "));
+            let incre = Number(prompt("Qual será nosso incremento ? "))
+            let fim = Number(prompt("Onde irá terminar nossa contagem? "))
+           
+                if(incre <= 0){
+                    
+                    incre = incre * -1;
+                }
+                if(init >= fim ){
+                    for(let contador = init; contador >= fim; contador -= incre){
+                        res.innerHTML += `${contador} -> `
+                    }
+                }else{
+                     for(let contador = init; contador <= fim; contador += incre){
+                    res.innerHTML += `${contador} -> `
+                     }
+                }
+            
+            res.innerHTML += `FIM!`
+            }
+    </script>
+</body>
+</html>

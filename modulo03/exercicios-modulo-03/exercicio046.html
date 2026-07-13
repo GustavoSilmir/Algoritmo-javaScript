@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 46</title>
+</head>
+<body>
+    <h1>Exercício 46</h1>
+    <h2>Tabuada usando FOR</h2>
+    <button onclick="tabuadaFor()">Tabuada</button>
+    <div id="resultado"></div>
+    <script>
+        function tabuadaFor(){
+            let res = document.getElementById("resultado");
+             let resposta = Number(prompt("Qual número você quer ver a tabuada? "))
+             res.innerHTML += `<br>Tabuada do ${resposta}`
+            for(let contador = 1; contador <= 10; contador++){
+                let resultado = resposta * contador;
+               res.innerHTML += `<br><br>${resposta} x ${contador} = ${resultado}`;
+            }
+        }
+    </script>
+</body>
+</html>

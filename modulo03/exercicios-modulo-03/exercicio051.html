@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 51</title>
+    <h1>Exercício 51</h1>
+</head>
+<body>
+    <button onclick="criarPredio()">Criar Prédio</button>
+    <div id="resultado"></div>
+    <script>
+        function criarPredio(){
+            let res = document.getElementById("resultado");
+            let tot = 1;
+            let andares = Number(prompt("Quantos andares terá o prédio: "))
+            for(let contadorandar = 1; contadorandar <= andares; contadorandar++){
+                for(let asterisco = 1;  asterisco <= tot; asterisco ++){
+                    res.innerHTML += `*`
+                }
+                tot++
+                res.innerHTML += `<br>`
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 54</title>
+</head>
+<body>
+    <h1>Exercício 54</h1>
+    <h2>Cadastrar Pessoas, exibir, total cadastrado, pessoa mais velha, nome e idade e tambem pessoa mais nova</h2>
+    <button onclick="cadastroPessoas()">Cadastrar Pessoas</button>
+    <div id="resultado"></div>
+    <script>
+        function cadastroPessoas(){
+            let res = document.getElementById("resultado");
+            let resp = '';
+            let nome = "";
+            let contador = 0;
+            let idade = 0;
+            let idademaisvelho = 0;
+            let nomeMaisVelho = "";
+            let idademaisnovo = 0;
+            let nomeMaisNovo = "";
+            do{
+                contador++
+
+                while(true){
+                    nome = prompt(`Qual nome da ${contador}° pessoa: `).trim();
+                    if(nome.length < 3){
+                        alert("Nome deve conter pelo menos 3 letras")
+                    }else{
+                        break;
+                    }
+                }
+                while(true){
+                    idade = Number(prompt(`Qual idade da ${contador}°Pessoa: `))
+                    if(idade >= 0 && idade <= 130){
+                        break;
+                    }else{
+                        alert("Idade deve ser entre 0 e 130 anos.")
+                    }
+
+                    
+
+                }
+                res.innerHTML += `<br> Nome: <strong>${nome}</strong> || Idade: ${idade}<br>`
+                if(contador == 1){
+                        idademaisnovo = idade
+                        nomeMaisNovo = nome
+                        idademaisvelho = idade
+                        nomeMaisVelho = nome
+                    }else{
+                        if(idade < idademaisnovo){
+                            idademaisnovo = idade
+                            nomeMaisNovo = nome
+                        }
+                        if(idade > idademaisvelho){
+                            idademaisvelho = idade
+                            nomeMaisVelho = nome
+                        }
+                    }
+                
+                while(true){
+                    resp = prompt("Deseja Continuar?[S/N] ").toLocaleLowerCase().trim();
+                    if (resp == 's' || resp == 'n' || resp == 'sim' || resp == 'não' || resp == 'nao') {
+                        break; // Resposta válida recebida, quebra o while interno
+                    } else {
+                        alert("Por favor, responda apenas com S ou N.");
+                    }
+                }
+            }while(resp == 's' || resp == 'sim')
+            res.innerHTML += `<br><br>O total de pessoas cadastradas foi de ${contador}<br>`;
+            res.innerHTML += `A pessoa mais jovem é a ${nomeMaisNovo} com idade de ${idademaisnovo} anos.<br>`
+             res.innerHTML += `A pessoa mais velha é a ${nomeMaisVelho} com idade de ${idademaisvelho} anos.<br>`
+
+
+        }
+    </script>
+</body>
+</html>

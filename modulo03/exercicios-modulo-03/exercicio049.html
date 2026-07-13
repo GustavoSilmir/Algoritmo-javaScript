@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 49</title>
+</head>
+<body>
+    <h1>Exercício 49</h1>
+
+        <button onclick="calculoFibonacci()">FIBONACCI</button>
+        <div id="resultado"></div>
+        <script>
+            function calculoFibonacci(){
+                let res = document.getElementById("resultado")
+                let valor = Number(prompt("Quantos elementos iremos mostrar: "))
+                let n1 =0;
+                let n2 = 1;
+                let n3;
+                res.innerHTML = "";
+                for(let c = 1; c <= valor; c++){
+                   if (c == 1) {
+            res.innerHTML += `${n1} -> `;
+        } else if (c == 2) {
+            res.innerHTML += `${n2} -> `;
+        } else {
+            n3 = n1 + n2;
+            res.innerHTML += `${n3} -> `;
+            n1 = n2;
+            n2 = n3;
+        }
+                }
+                res.innerHTML += "🏁";
+            }
+        </script>
+</body>
+</html>
