@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 59</title>
+</head>
+<body>
+    <h1>Média da Turma</h1>
+    <button onclick="notasAlunos()">Nota de 6 alunos</button>
+    <div id="resultado" style="font-family: monospace; line-height: 1.6;"></div>
+
+    <script>
+        function notasAlunos() {
+            let res = document.getElementById("resultado");
+            res.innerHTML = ""; // Limpa a tela antes de rodar
+
+            let vet = [];
+            let soma = 0;
+
+            // 1. LAÇO: Lê as notas e já acumula a soma
+            for(let p = 0; p < 6; p++){
+                vet[p] = Number(prompt(`Qual a nota do ${p+1}° aluno? `));
+                soma += vet[p];
+            }
+
+            // 2. LAÇO: Exibe a lista completa de alunos e notas
+            res.innerHTML += "<h3>Notas Cadastradas:</h3>";
+            for(let p = 0; p < 6; p++){
+                res.innerHTML += `${p+1}° Aluno: <strong>${vet[p]}</strong><br>`;
+            }
+
+            // 3. Cálculo direto da Média (Sem precisar de um laço)
+            let media = soma / vet.length;
+
+            res.innerHTML += `<br>A soma de todas as notas é: <strong>${soma}</strong><br>`;
+            res.innerHTML += `A média da turma é: <strong>${media.toFixed(2)}</strong><br><br>`;
+
+            // 4. LAÇO: Filtra e exibe apenas os alunos ACIMA da média
+            res.innerHTML += "<h3>Alunos Acima da Média:</h3>";
+            for(let p = 0; p < 6; p++){
+                if (vet[p] > media){
+                    res.innerHTML += `📍 Aluno ${p+1} com nota <strong>${vet[p]}</strong><br>`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

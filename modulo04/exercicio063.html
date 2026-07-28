@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 63</title>
+</head>
+<body>
+    <h1>Exercício 63</h1>
+    <button onclick="cadastrarPessoas()">Cadastrar Pessoas</button>
+    <div id="resultado"></div>
+    <script>
+        function cadastrarPessoas(){
+            let res = document.getElementById("resultado")
+            res.innerHTML = "";
+            
+            let mediaIdades = 0;
+            let somaIdades = 0;
+            let maior = 0;
+            let pessoas = [];
+            let idades = [];
+            for(let p = 0; p < 4; p++){
+                let nome = prompt(`Nome da ${p + 1}ª pessoa:`);
+                if (!nome || nome.trim() === "" || /\d/.test(nome)) {
+                    alert("Digite um nome válido (sem números)!");
+                    p--;
+                    continue;
+                }
+
+                
+                let idadeInput = Number(prompt(`Idade da ${p + 1}ª pessoa:`));
+                if (isNaN(idadeInput) || idadeInput <= 0) {
+                alert("Digite uma idade válida (número maior que 0)!");
+                p--;
+                continue;
+            }
+
+               somaIdades += idadeInput
+               pessoas[p] = nome.trim();
+               idades[p] = idadeInput
+            }
+
+            
+
+            res.innerHTML += `<br><br><strong>Nomes Cadastrados</strong>`;
+
+            for (let p = 0; p  < 4; p++) {
+                res.innerHTML += `<br>NOME: ${pessoas[p]} || IDADE: ${idades[p]}<br><br>`               
+            }
+
+           
+            mediaIdades = somaIdades / pessoas.length
+            res.innerHTML += `<br><br><strong>SOMA DAS IDADES:</strong>`;
+            res.innerHTML += `<br>SOMA DAS IDADES ${somaIdades}`;
+
+            res.innerHTML += `<br><br><strong>MÉDIA DAS IDADES:</strong>`;
+            res.innerHTML += `<br>MÉDIA DAS IDADES ${mediaIdades}`;
+
+             res.innerHTML += `<br><br><strong>PESSOAS COM IDADE ACIMA DA MÉDIA:</strong>`;
+            for(let p = 0; p < 4; p++){
+                if(idades[p] > mediaIdades){
+                    res.innerHTML += `<br>NOME: ${pessoas[p]} || IDADE: ${idades[p]}<br><br>` 
+                }
+            }
+             res.innerHTML += `<br><br><strong>MAIOR IDADE DO GRUPO:</strong>`;
+             for (let p = 0; p  < 4; p++) {
+                if(p == 0){
+                    maior = idades[p]
+                }else{
+                    if(idades[p] > maior){
+                        maior = idades[p]              
+                    }
+                }
+                              
+            }
+
+             for (let p = 0; p  < 4; p++) {
+                if(idades[p] === maior){
+
+                    res.innerHTML += `<br>NOME: ${pessoas[p]} || IDADE: ${idades[p]}<br><br>`                              
+                }
+            }
+
+             
+
+        }
+    </script>
+</body>
+</html>

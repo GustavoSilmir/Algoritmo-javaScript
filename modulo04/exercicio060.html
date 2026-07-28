@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 60</title>
+    <h1>Exercício 60</h1>
+    <button onclick="sortearValores()">Sortear valores</button>
+    <div id="resultado"></div>
+</head>
+<body>
+    <script>
+        async function sortearValores(){
+            let somapares = 0;
+            let quantidadePares = 0;
+            let somaimpares = 0;
+            let quantidadeImpares = 0
+            let maior, menor;
+            const aguarde = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+            let res = document.getElementById("resultado")
+            let vet = new Array(10);
+            for (let p = 0; p < vet.length; p++) {
+                vet[p] = Math.floor(Math.random() * 10) + 1;
+            }
+            res.innerHTML += "O vetor gerado foi: <br>";
+            for (let p = 0; p < vet.length; p++) {
+                res.innerHTML += `${vet[p]} ➔ `;
+                await aguarde(300);
+            }
+            res.innerHTML += "<br>Números pares e suas posições: <br>";
+            for (let p = 0; p < vet.length; p++) {
+                if(vet[p] % 2 == 0){
+                    res.innerHTML += `${p+1} ➔ ${vet[p]} <br> `;
+                    await aguarde(300);
+                    somapares += vet[p]
+                    quantidadePares++
+                }
+            }
+            res.innerHTML += "<br>Números Ímpares e suas posições: <br>";
+            for (let p = 0; p < vet.length; p++) {
+                if(vet[p] % 2 == 1){
+                    res.innerHTML += `${p+1} ➔ ${vet[p]} <br> `;
+                    await aguarde(300);
+                    somaimpares += vet[p]
+                    quantidadeImpares++
+                }
+            }
+            
+            for (let p = 0; p < vet.length; p++) {
+                if(p  == 0){
+                    maior = vet[0];
+                    menor = vet[0];                  
+                }else{
+                    if(vet[p] > maior){
+                        maior = vet[p]
+                    }
+                    if(vet[p] < menor){
+                        menor = vet[p]
+                    }
+                    
+                }
+            }
+            res.innerHTML += "<br>Maiores valores gerados e suas posições: <br>";
+            for(let p = 0; p < vet.length; p++){
+                if(vet[p] === maior){
+                    res.innerHTML += `<br>Posição do vetor: ${p + 1} -> valor: ${vet[p]}<br>`
+                }
+            }
+
+             res.innerHTML += "<br>Menores valores gerados e suas posições: <br>";
+            for(let p = 0; p < vet.length; p++){
+                if(vet[p] === menor){
+                    res.innerHTML += `<br>Posição do vetor: ${p + 1} -> valor:${vet[p]}<br>`
+                }
+            }
+             
+               
+            res.innerHTML += `<strong>SOMA DOS PARES É DE ${somapares}!</strong><br><br>`;
+            res.innerHTML += `<strong>QUANTIDADE DOS PARES É DE ${quantidadePares}!</strong><br><br>`;
+
+            res.innerHTML += `<strong>SOMA DOS ÍMPARES É DE ${somaimpares}!</strong><br><br>`;
+            res.innerHTML += `<strong>QUANTIDADE DOS ÍMPARES É DE ${quantidadeImpares}!</strong><br><br>`;
+            res.innerHTML += "<strong>FIM!</strong><br><br>";
+        }
+    </script>
+</body>
+</html>

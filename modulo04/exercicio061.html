@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 61</title>
+</head>
+<body>
+    <h1>Exercício 61</h1>
+    <button onclick="cadastrarPessoas()">Cadastrar Pessoas</button>
+    <div id="resultado"></div>
+    <script>
+        function cadastrarPessoas(){
+            let res = document.getElementById("resultado")
+            res.innerHTML = "";
+            let vet = new Array(6);
+            for(let p = 0; p < vet.length; p++){
+
+                let nome = prompt(`Nome da ${p+1}° pessoa.`)
+                // A regex /\d/ procura por qualquer dígito numérico (0-9)
+                if (!nome || nome.trim() === "" || /\d/.test(nome)) {
+                alert("Por favor, digite apenas nomes (sem números)!");
+                p--; // Dica extra: decrementa o 'p' para repeti-lo e pedir o nome dessa mesma pessoa novamente
+                continue; // Em vez de interromper tudo com return, você pode dar outra chance usando continue
+            }
+            vet[p] = nome.trim();
+            }
+
+            for(let p = 0; p < vet.length; p++){
+                res.innerHTML += `Posição ${p+1} || NOME: ${vet[p]} <br><br>`
+            }
+
+            res.innerHTML += `<br><br><strong>ANALISANDO NOMES:</strong>`
+            res.innerHTML += `<br><br><strong>NOMES COM MENOS DE 6 LETRAS</strong>`
+            for(let p = 0; p < vet.length; p++){
+               if(vet[p].length < 5){
+                res.innerHTML += `<br>POSIÇÃO: ${p + 1} | NOME: ${vet[p]}`
+               }
+            }
+
+            res.innerHTML += `<br><br><strong>NOMES QUE COMEÇAM COM VOGAL:</strong>`;
+
+            for (let p = 0; p < vet.length; p++) {
+                // Testa se o nome atual começa com a, e, i, o ou u
+                if (/^[aeiou]/i.test(vet[p])) {
+                    res.innerHTML += `<br>POSIÇÃO: ${p + 1} | NOME: ${vet[p]}`;
+                }
+            }
+
+             
+            res.innerHTML += `<br><br><strong>NOMES QUE POSSUEM A LETRA 'S':</strong>`;
+
+        for (let p = 0; p < vet.length; p++) {
+            // .toLowerCase() garante que vai pegar tanto 'S' quanto 's'
+            if (vet[p].toLowerCase().includes("s")) {
+                res.innerHTML += `<br>POSIÇÃO: ${p + 1} | NOME: ${vet[p]}`;
+            }
+        }
+
+        }
+    </script>
+</body>
+</html>

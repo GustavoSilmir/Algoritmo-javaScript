@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 62</title>
+    <style>
+        table {
+            width: 100%;
+            max-width: 500px;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-family: monospace;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercício 62</h1>
+    <button onclick="cadastrarETabelar()">Cadastrar Pessoas</button>
+    <div id="resultado"></div>
+    <script>
+        function cadastrarETabelar(){
+            let res = document.getElementById("resultado");
+            res.innerHTML = "";
+            
+            let pessoas = [];
+            for(let p = 0; p < 4; p++){
+                let nome = prompt(`Nome da ${p + 1}ª pessoa:`);
+                if (!nome || nome.trim() === "" || /\d/.test(nome)) {
+                    alert("Digite um nome válido (sem números)!");
+                    p--;
+                    continue;
+                }
+
+                let sexo = prompt(`Sexo da ${p + 1}ª pessoa (M/F):`).toUpperCase();
+                let idade = Number(prompt(`Idade da ${p + 1}ª pessoa:`));
+
+                // Adiciona a pessoa como um objeto dentro do vetor
+                pessoas.push({
+                    nome: nome.trim(),
+                    sexo: sexo,
+                    idade: idade
+                });
+            }
+
+            let tabela = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>Sexo</th>
+                            <th>Idade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+        for (let i = 0; i < pessoas.length; i++) {
+                tabela += `
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td>${pessoas[i].nome}</td>
+                        <td>${pessoas[i].sexo}</td>
+                        <td>${pessoas[i].idade} anos</td>
+                    </tr>
+                `;
+            }
+
+            tabela += `
+                    </tbody>
+                </table>
+            `;
+
+            // 3. Injeta a tabela pronta na tela
+            res.innerHTML = tabela;
+        }
+    </script>
+</body>
+</html>
