@@ -1,0 +1,429 @@
+
+<header class="header-jahdoacai-mobile">
+  <div class="header-jahdoacai-frase-header">
+    <div class="header-jahdoacai-frase-header-icone">
+      <img src="../assets/icone-coracao-header.svg" alt="">
+    </div>
+    <div class="header-jahdoacai-frase-header-seuamor">
+      <p>SEU AMOR</p>
+    </div>
+    <div class="header-jahdoacai-frase-header-porjah">
+      <p>POR JAH</p>
+    </div>
+    <div class="header-jahdoacai-frase-header-merece">
+      <p>MERECE</p>
+    </div>
+    <div class="header-jahdoacai-frase-header-recompensa">
+      <p>RECOMPENSA</p>
+    </div>
+  </div>
+  <div class="header-jahdoacai-frase-facaparte">
+    <p>Faça parte do JAH PREMIA <br>
+e ganhe pontos toda vez <br>
+que curtir seu momento JAH!</p>
+  </div>
+  <button type="button" class="header-jahdoacai-frase-botao-queroparticipar" (click)="scrollToSection('login-jahdoacai')">
+    QUERO PARTICIPAR
+  </button>
+  <div class="header-jahdoacai-frase-botao-icone-celular">
+    <img src="../assets/icone-celular-headers-mobile.svg" alt="Jah Premia">
+  </div>
+</header>
+<header class="header-jahdoacai-desktop" id="jah-home">
+  <div class="header-jahdoacai-desktop-menu">
+    <img class="header-jahdoacai-desktop-menu-logo" src="../assets/logo-jahdoacai.svg" alt="Jah">
+    <nav class="header-jahdoacai-desktop-menu-nav">
+      <button type="button" (click)="scrollToSection('jah-home')">HOME</button>
+      <button type="button" (click)="scrollToSection('login-jahdoacai')">PROGRAMA DE FIDELIDADE</button>
+      <button type="button" (click)="scrollToSection('jah-como-participar')">COMO PARTICIPAR</button>
+      <button type="button" (click)="scrollToSection('jah-niveis')">NÍVEIS</button>
+      <button type="button" (click)="scrollToSection('jah-regulamento', 'regulamento')">REGULAMENTO</button>
+      <button type="button" (click)="scrollToSection('jah-regulamento', 'faq')">DÚVIDAS</button>
+    </nav>
+    <button type="button" class="header-jahdoacai-desktop-menu-perfil" (click)="scrollToSection('login-jahdoacai')" aria-label="Entrar">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="12" cy="8" r="3.5" fill="#290949"/>
+        <path d="M5.5 19.2c.7-3.2 3.3-5.2 6.5-5.2s5.8 2 6.5 5.2c.1.5-.3 1-1 1H6.5c-.7 0-1.1-.5-1-1z" fill="#290949"/>
+      </svg>
+    </button>
+  </div>
+  <div class="header-jahdoacai-desktop-quadroinformacoes">
+    <div class="header-jahdoacai-desktop-borda-icone header-jahdoacai-desktop-borda-icone--sorvete">
+      <img src="../assets/icone-sorvete-borda-lado-esquerdo-superior.svg" alt="">
+    </div>
+    <div class="header-jahdoacai-desktop-borda-icone header-jahdoacai-desktop-borda-icone--casinha">
+      <img src="../assets/icone-casinha-borda-lado-esquerdo-inferior.svg" alt="">
+    </div>
+    <div class="header-jahdoacai-desktop-borda-icone header-jahdoacai-desktop-borda-icone--pin">
+      <img src="../assets/icone-pin-borda-lado-direito-superior.svg" alt="">
+    </div>
+    <div class="header-jahdoacai-desktop-borda-icone header-jahdoacai-desktop-borda-icone--celular">
+      <img src="../assets/icone-celular-borda-central-lado-direito.svg" alt="">
+    </div>
+    <div class="header-jahdoacai-desktop-quadroinformacoes-texto">
+      <div class="header-jahdoacai-frase-header">
+        <div class="header-jahdoacai-frase-header-seuamor"><p>SEU AMOR</p></div>
+        <div class="header-jahdoacai-frase-header-porjah"><p>POR JAH</p></div>
+        <div class="header-jahdoacai-frase-header-merece"><p>MERECE</p></div>
+        <div class="header-jahdoacai-frase-header-recompensa"><p>RECOMPENSA</p></div>
+      </div>
+      <div class="header-jahdoacai-frase-facaparte">
+        <p>Faça parte do JAH PREMIA e ganhe pontos toda vez que curtir seu momento JAH!</p>
+      </div>
+      <button type="button" class="header-jahdoacai-frase-botao-queroparticipar" (click)="scrollToSection('login-jahdoacai')">
+        QUERO PARTICIPAR
+      </button>
+    </div>
+    <div class="header-jahdoacai-desktop-quadroinformacoes-imagem">
+      <img src="../assets/icone-celular-headers-mobile.svg" alt="Jah Premia">
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="login-jahdoacai" id="login-jahdoacai">
+    <div class="login-jahdoacai-quadro-login">
+      <img class="login-jahdoacai-logo" src="../assets/logo-jahdoacai.svg" alt="Jah do Açaí">
+      <!-- <app-popup-login-b
+        redirect_url="/tabs/loyalty"
+        [register_func]="cadastro"
+        class="login-jahdoacai-override"
+      ></app-popup-login-b> -->
+    </div>
+  </section>
+
+  <section class="oquee-cashback-jahdoacai" id="jah-cashback">
+    <div class="oquee-cashback-jahdoacai-seujah-rendemais">
+      <div class="oquee-cashback-jahdoacai-seujah-rendemais-seujah"><p>SEU JAH</p></div>
+      <div class="oquee-cashback-jahdoacai-seujah-rendemais-rende"><p>RENDE</p></div>
+      <div class="oquee-cashback-jahdoacai-seujah-rendemais-mais"><p>MAIS</p></div>
+      <div class="oquee-cashback-jahdoacai-seujah-rendemais-cash"><p>CASH</p></div>
+      <div class="oquee-cashback-jahdoacai-seujah-rendemais-back"><p>BACK</p></div>
+      <div class="oquee-cashback-jahdoacai-seujah-rendemais-icone">
+        <img src="../assets/icone-jah.svg" alt="">
+        <img src="../assets/icone-sorvete.svg" alt="">
+      </div>
+    </div>
+    <div class="oquee-cashback-jahdoacai-logo-acai">
+      <img src="../assets/açai.svg" alt="Açaí Jah">
+    </div>
+    <div class="oquee-cashback-jahdoacai-quadro-texto">
+      <div class="oquee-cashback-jahdoacai-quadro-texto-masoqueecashback">
+        <h1>MAS O QUE É <br>CASHBACK?</h1>
+        <p>Essa palavra, em inglês, significa dinheiro de volta. O CashJah é nossa moeda especial e tem o mesmo valor do Real. O cashback gerado em cada compra pode chegar até 15%, dependendo das suas compras.</p>
+      </div>
+      <div class="oquee-cashback-jahdoacai-quadro-texto-masoqueecashback">
+        <h1>SOBRE O CASHBACK</h1>
+        <p>Para a geração e resgate de cashback, o cliente deve estar cadastrado no JAH PREMIA e informar o telefone no ato da compra ao atendente ou inserir no totem de autoatendimento. O cashback gerado em cada compra expira em 30 dias, contados a partir da data da compra em que foi gerado. O cashback gerado é pessoal e não pode ser transferido a terceiros.</p>
+      </div>
+    </div>
+  </section>
+  <section class="como-participar-jahdoacai-mobile">
+    <div class="como-participar-jahdoacai-titulo">
+      <h1>COMO PARTICIPAR?</h1>
+      <p>Participar é simples e rápido!</p>
+    </div>
+    <div class="como-participar-jahdoacai-quadrobranco">
+      <div class="como-participar-jahdoacai-quadrobranco-facaseucadastro">
+        <span class="como-participar-jahdoacai-passo-numero">1</span>
+        <img src="../assets/icone-celular-na-mao.svg" alt="">
+        <p>Faça o seu cadastro em <br> nosso site</p>
+      </div>
+      <div class="como-participar-jahdoacai-quadrobranco-facaseucadastro">
+        <span class="como-participar-jahdoacai-passo-numero">2</span>
+        <img src="../assets/icone-mensagem.svg" alt="">
+        <p>Na sua próxima compra,<br> informe seu número de <br> celular.</p>
+      </div>
+      <div class="como-participar-jahdoacai-quadrobranco-facaseucadastro">
+        <span class="como-participar-jahdoacai-passo-numero">3</span>
+        <img src="../assets/icone-computador.svg" alt="">
+        <p>Não se esqueça de concluir <br> o seu cadastro</p>
+        <p class="como-participar-jahdoacai-quadrobranco-facaseucadastro-text">Para garantir seus créditos nas <br> próximas compras</p>
+      </div>
+      <div class="como-participar-jahdoacai-quadrobranco-facaseucadastro">
+        <span class="como-participar-jahdoacai-passo-numero">4</span>
+        <img src="../assets/icone-pote-acai.svg" alt="">
+        <p>Quando for curtir seu JAH, informe seu número de celular no caixa para usar seu cashback</p>
+      </div>
+    </div>
+    <div class="como-participar-jahdoacai-sobreosniveis">
+      <h1>SOBRE OS NÍVEIS</h1>
+      <p>Cada compra efetuada contribui para que você atinja novos níveis no programa, podendo conquistar até 15% de cashback em todas as compras.</p>
+    </div>
+    <div class="como-participar-jahdoacai-nivel-bronze">
+      <div class="como-participar-jahdoacai-nivel-bronze-titulo">
+        <h1>BRONZE</h1>
+      </div>
+      <h2>5% DE CASHBACK</h2>
+      <p>Ganhe 5% de Cashback em todas as compras, sem valor mínimo.</p>
+    </div>
+    <div class="como-participar-jahdoacai-nivel-prata">
+      <div class="como-participar-jahdoacai-nivel-prata-titulo">
+        <h1>PRATA</h1>
+      </div>
+      <h2>10% DE CASHBACK</h2>
+      <p>A partir de R$ 120,00 em compras no mês.</p>
+    </div>
+    <div class="como-participar-jahdoacai-texto-nivel120">
+      <p>Ao acumular R$ 120,00 em compras, você vira automaticamente nível PRATA e passa a ganhar mais Cashback em cada compra. Para se manter nesse nível, continue com Jah no seu dia a dia e mantenha o mínimo de R$ 120,00 em compras a cada 30 dias.</p>
+    </div>
+    <div class="como-participar-jahdoacai-nivel-ouro">
+      <div class="como-participar-jahdoacai-nivel-ouro-titulo">
+        <h1>OURO</h1>
+      </div>
+      <h2>15% DE CASHBACK</h2>
+      <p>A partir de R$ 250,00 em compras no mês.</p>
+    </div>
+    <div class="como-participar-jahdoacai-texto-nivel250">
+      <p>Ao acumular R$ 250,00 em compras, você sobe para o nível OURO e passa a receber ainda mais Cashback em cada compra. Para continuar aproveitando esse benefício mantenha o mínimo de R$ 250,00 em compras a cada 30 dias.</p>
+    </div>
+  </section>
+  <section class="como-participar-jahdoacai-desktop" id="jah-como-participar">
+    <div class="como-participar-jahdoacai-desktop-quadro-comoparticipar">
+      <div class="como-participar-jahdoacai-desktop-quadro-comoparticipar-titulo">
+        <h1>COMO PARTICIPAR?</h1>
+        <p>Participar é simples e rápido!</p>
+      </div>
+      <div class="como-participar-jahdoacai-desktop-passos">
+        <div class="como-participar-jahdoacai-quadrobranco-facaseucadastro">
+          <span class="como-participar-jahdoacai-passo-numero">1</span>
+          <img src="../assets/icone-celular-na-mao.svg" alt="">
+          <p>Faça o seu cadastro em nosso site</p>
+        </div>
+        <div class="como-participar-jahdoacai-quadrobranco-facaseucadastro">
+          <span class="como-participar-jahdoacai-passo-numero">2</span>
+          <img src="../assets/icone-mensagem.svg" alt="">
+          <p>Na sua próxima compra, informe seu número de celular.</p>
+        </div>
+        <div class="como-participar-jahdoacai-quadrobranco-facaseucadastro">
+          <span class="como-participar-jahdoacai-passo-numero">3</span>
+          <img src="../assets/icone-computador.svg" alt="">
+          <p>Não se esqueça de concluir o seu cadastro</p>
+          <p class="como-participar-jahdoacai-quadrobranco-facaseucadastro-text">Para garantir seus créditos nas próximas compras</p>
+        </div>
+        <div class="como-participar-jahdoacai-quadrobranco-facaseucadastro">
+          <span class="como-participar-jahdoacai-passo-numero">4</span>
+          <img src="../assets/icone-pote-acai.svg" alt="">
+          <p>Quando for curtir seu JAH, informe seu número de celular no caixa para usar seu cashback</p>
+        </div>
+      </div>
+    </div>
+    <div class="como-participar-jahdoacai-desktop-quadro-sobreosniveis" id="jah-niveis">
+      <h1 class="como-participar-jahdoacai-desktop-quadro-sobreosniveis-title">SOBRE OS NÍVEIS</h1>
+      <p class="como-participar-jahdoacai-desktop-quadro-sobreosniveis-subtitle">Cada compra efetuada contribui para que você atinja novos níveis no programa, podendo conquistar até 15% de cashback em todas as compras.</p>
+      <div class="como-participar-jahdoacai-desktop-quadro-sobreosniveis-quadrosniveis">
+        <div class="como-participar-jahdoacai-nivel-bronze">
+          <div class="como-participar-jahdoacai-nivel-bronze-titulo">
+            <h1>BRONZE</h1>
+          </div>
+          <h2>5% DE CASHBACK</h2>
+          <p>Ganhe 5% de Cashback em todas as compras, sem valor mínimo.</p>
+        </div>
+        <div class="como-participar-jahdoacai-nivel-prata">
+          <div class="como-participar-jahdoacai-nivel-prata-titulo">
+            <h1>PRATA</h1>
+          </div>
+          <h2>10% DE CASHBACK</h2>
+          <p>A partir de R$ 120,00 em compras no mês.</p>
+        </div>
+        <div class="como-participar-jahdoacai-nivel-ouro">
+          <div class="como-participar-jahdoacai-nivel-ouro-titulo">
+            <h1>OURO</h1>
+          </div>
+          <h2>15% DE CASHBACK</h2>
+          <p>A partir de R$ 250,00 em compras no mês.</p>
+        </div>
+      </div>
+      <div class="como-participar-jahdoacai-desktop-niveis-textos">
+        <p>Ao acumular R$ 120,00 em compras, você vira automaticamente nível PRATA e passa a ganhar mais Cashback em cada compra. Para se manter nesse nível, continue com Jah no seu dia a dia e mantenha o mínimo de R$ 120,00 em compras a cada 30 dias.</p>
+        <p>Ao acumular R$ 250,00 em compras, você sobe para o nível OURO e passa a receber ainda mais Cashback em cada compra. Para continuar aproveitando esse benefício mantenha o mínimo de R$ 250,00 em compras a cada 30 dias.</p>
+      </div>
+    </div>
+  </section>
+  <section class="regulamento-jahdoacai-mobile">
+    <div class="regulamento-jahdoacai-titulo">
+      <h1>REGULAMENTO</h1>
+    </div>
+    <div class="regulamento-jahdoacai-caixa-branca-regulamento">
+      <ng-container *ngTemplateOutlet="jahRegulamentoContent"></ng-container>
+    </div>
+    <div class="regulamento-jahdoacai-duvidasfrequentes">
+      <h3>DÚVIDAS <br> FREQUENTES </h3>
+    </div>
+    <div class="regulamento-jahdoacai-caixa-branca-duvidasfrequentes">
+      <ng-container *ngTemplateOutlet="jahFaqContent"></ng-container>
+    </div>
+  </section>
+  <section class="regulamento-jahdoacai-desktop" id="jah-regulamento">
+    <div class="regulamento-jahdoacai-desktop-abas">
+      <button
+        type="button"
+        class="regulamento-jahdoacai-desktop-aba"
+        [class.is-active]="jahDesktopTab === 'regulamento'"
+        (click)="jahDesktopTab = 'regulamento'"
+      >REGULAMENTO</button>
+      <button
+        type="button"
+        class="regulamento-jahdoacai-desktop-aba"
+        [class.is-active]="jahDesktopTab === 'faq'"
+        (click)="jahDesktopTab = 'faq'"
+      >DÚVIDAS FREQUENTES</button>
+    </div>
+    <div class="regulamento-jahdoacai-desktop-card">
+      <ng-container *ngIf="jahDesktopTab === 'regulamento'" [ngTemplateOutlet]="jahRegulamentoContent"></ng-container>
+      <ng-container *ngIf="jahDesktopTab === 'faq'" [ngTemplateOutlet]="jahFaqContent"></ng-container>
+    </div>
+  </section>
+</main>
+
+<ng-template #jahRegulamentoContent>
+  <section>
+    <h2>Critério para avanço de nível</h2>
+    <ul>
+      <li>Para estar no nível bronze não há valor mínimo para compra.</li>
+      <li>Bronze → Prata: gastar R$ 120 nos últimos 30 dias</li>
+      <li>Prata → Ouro: gastar R$ 250 nos últimos 30 dias</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Período de consideração para avanço de nível</h2>
+    <p>O avanço de nível é calculado com base nas compras realizadas durante o mês vigente. A partir da primeira compra, inicia-se o novo ciclo.</p>
+  </section>
+
+  <section>
+    <h2>Benefícios do nível</h2>
+    <p>Uma vez que você atinge um novo nível, os benefícios correspondentes são aplicáveis por 30 dias corridos. Por exemplo, se você alcançou o nível bronze no final de março, você desfrutará dos benefícios desse nível até o final do mês de abril.</p>
+  </section>
+
+  <section>
+    <h2>Acumulação e manutenção de nível</h2>
+    <p>As compras são reiniciadas a cada período de 30 dias. Para manter um nível específico, é necessário realizar as compras correspondentes a esse nível no mês atual.</p>
+    <ul>
+      <li>Manter Nível Prata: gastar R$ 120 nos últimos 30 dias</li>
+      <li>Manter Nível Ouro: gastar R$ 250 nos últimos 30 dias</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Validade dos créditos</h2>
+    <p>Os créditos obtidos têm validade de 30 dias corridos a partir da data da compra.</p>
+  </section>
+
+  <section>
+    <h2>Uso de transferência de créditos</h2>
+    <p>Os créditos gerados são pessoais, intransferíveis e não podem ser combinados com outras promoções.</p>
+  </section>
+</ng-template>
+
+<ng-template #jahFaqContent>
+  <section>
+    <h2>O que é JAH PREMIA?</h2>
+    <p>JAH PREMIA é o programa de fidelidade do JAH.</p>
+  </section>
+
+  <section>
+    <h2>Como participar do JAH PREMIA?</h2>
+    <p>Para participar, basta se cadastrar aqui no site e informar seu telefone celular em todas as suas compras para começar a ganhar cashback.</p>
+  </section>
+
+  <section>
+    <h2>O que é cashback? Como vai funcionar o JAH PREMIA?</h2>
+    <p>Cashback significa "dinheiro de volta". O JAH PREMIA funcionará da seguinte forma: ao realizar uma compra em nossas lojas, você receberá uma parte do valor gasto de volta em forma de cashback para usar em sua próxima compra. O limite de compra diário para conseguir cashback é de 3 compras por dia. Esse limite é estabelecido para prevenir fraudes e garantir a integridade do programa.</p>
+  </section>
+
+  <section>
+    <h2>Como utilizar meu cashback? Posso utilizá-lo em qualquer loja do JAH?</h2>
+    <p>O cashback pode ser utilizado em todas as unidades do JAH. Lembre-se de que o valor do cashback é pessoal e intransferível.</p>
+  </section>
+
+  <section>
+    <h2>Qual é o valor mínimo da compra para avançar de nível?</h2>
+    <p>Compras de qualquer valor geram cashback.</p>
+  </section>
+
+  <section>
+    <h2>Como acontece o avanço de nível?</h2>
+    <p>Para o avanço de nível, serão consideradas apenas as compras realizadas dentro do mês vigente. A cada conquista de nível, você poderá usufruir dos benefícios adquiridos por 30 dias. Por exemplo, se você alcançou o Nível Ouro no final do mês de abril, você garante os benefícios desse nível até o final do mês de maio. Para manter-se no nível, você precisará realizar um novo ciclo de compras correspondente.</p>
+  </section>
+
+  <section>
+    <h2>Até quando posso utilizar meu saldo?</h2>
+    <p>O cashback expira após 30 dias (contados a partir da data de compra).</p>
+  </section>
+
+  <section>
+    <h2>Posso utilizar o cashback parcialmente?</h2>
+    <p>Não, no momento da compra, será utilizado o saldo total de cashback disponível.</p>
+  </section>
+
+  <section>
+    <h2>É possível fidelizar uma compra já realizada?</h2>
+    <p>Não, após a emissão do cupom fiscal, não é possível cadastrá-la no Clube JAH. Se você quiser se beneficiar do Clube JAH, é importante garantir que está inscrito no programa e seguir as diretrizes no momento da compra.</p>
+  </section>
+
+  <section>
+    <h2>Vou ganhar cashback nas compras realizadas no iFood, Rappi e outras plataformas de delivery?</h2>
+    <p>Não. As compras realizadas em plataformas de delivery não geram cashback.</p>
+  </section>
+
+  <section>
+    <h2>Posso sacar meu cashback do programa JAH PREMIA?</h2>
+    <p>Não. Você poderá utilizá-los apenas nas compras realizadas nas lojas do JAH.</p>
+  </section>
+
+  <section>
+    <h2>Ficou com alguma dúvida? Entre em contato conosco pelo e-mail:</h2>
+    <p><a href="mailto:contato@jahdoacai.com.br">contato@jahdoacai.com.br</a></p>
+  </section>
+</ng-template>
+
+<footer class="footer-jahdoacai-mobile">
+    <div class="footer-jahdoacai-caixa-elementos">
+      <div class="footer-jahdoacai-caixa-elementos-informacoesempresa">
+        <img src="../assets/logo-branco.svg" alt="logo">
+        <p>(31) 98304-1821</p>
+        <p>falecomojah@jahdoacai.com.br</p>
+        <p>Praça Alpha de Centauro, 54 - Conj. 212</p>
+      </div>
+      <div class="footer-jahdoacai-caixa-elementos-menu">
+        <h3>MENU</h3>
+        <p>Sobre o JAH</p>
+        <p>Código de Conduta</p>
+        <p>Relatório de Sustentabilidade</p>
+        <p>Política de Privacidade</p>
+        <p>Termos de Uso</p>
+        <p>Blog</p>
+      </div>
+      <div class="footer-jahdoacai-caixa-elementos-produtos">
+        <h3>Produtos</h3>
+        <p>Açaí</p>
+        <p>Sorvetes</p>
+        <p>Picolés</p>
+        <p>Milkshakes</p>
+      </div>
+      <div class="footer-jahdoacai-caixa-elementos-contato">
+        <h3>CONTATO</h3>
+        <p>Fale Conosco</p>
+        <p>Trabalhe Conosco</p>
+        <p>Seja um Franqueado</p>
+        <p>Downloads</p>
+        <p>Ouvidoria</p>
+        
+      </div>
+      <div class="footer-jahdoacai-caixa-elementos-redessociais">
+        <h3>REDES SOCIAIS</h3>
+        <div class="footer-jahdoacai-caixa-elementos-redessociais-icones">
+          <img src="../assets/icone-instagram.svg" alt="instagram">
+          <img src="../assets/icone-youtube.svg" alt="instagram">
+          <img src="../assets/icone-X.svg" alt="instagram">
+          <img src="../assets/icone-tiktok.svg" alt="instagram">
+        </div>
+      </div>
+    </div>
+</footer>
+
+<!-- <footer class="footer-jahdoacai-desktop">
+    <div class="footer-jahdoacai-caixa-elementos"></div>
+</footer> -->
+ 
